@@ -1,0 +1,581 @@
+ticker,nombre,sector,origen,pais
+MMM,3M,Industria,EE.UU.,EE.UU.
+AOS,A. O. Smith,Industria,EE.UU.,EE.UU.
+ABT,Abbott Laboratories,Salud,EE.UU.,EE.UU.
+ABBV,AbbVie,Salud,EE.UU.,EE.UU.
+ACN,Accenture,Tecnología,EE.UU.,EE.UU.
+ADBE,Adobe Inc.,Tecnología,EE.UU.,EE.UU.
+AMD,Advanced Micro Devices,Tecnología,EE.UU.,EE.UU.
+AES,AES Corporation,Servicios públicos,EE.UU.,EE.UU.
+AFL,Aflac,Financiero,EE.UU.,EE.UU.
+A,Agilent Technologies,Salud,EE.UU.,EE.UU.
+APD,Air Products,Materiales,EE.UU.,EE.UU.
+AKAM,Akamai Technologies,Tecnología,EE.UU.,EE.UU.
+ALB,Albemarle Corporation,Materiales,EE.UU.,EE.UU.
+ARE,Alexandria Real Estate Equities,Inmobiliario,EE.UU.,EE.UU.
+ALGN,Align Technology,Salud,EE.UU.,EE.UU.
+ALLE,Allegion,Industria,EE.UU.,EE.UU.
+LNT,Alliant Energy,Servicios públicos,EE.UU.,EE.UU.
+ALL,Allstate,Financiero,EE.UU.,EE.UU.
+GOOGL,Alphabet Inc. (Class A),Comunicación,EE.UU.,EE.UU.
+GOOG,Alphabet Inc. (Class C),Comunicación,EE.UU.,EE.UU.
+MO,Altria,Consumo básico,EE.UU.,EE.UU.
+AMZN,Amazon,Consumo discrecional,EE.UU.,EE.UU.
+AMCR,Amcor,Materiales,EE.UU.,EE.UU.
+AEE,Ameren,Servicios públicos,EE.UU.,EE.UU.
+AEP,American Electric Power,Servicios públicos,EE.UU.,EE.UU.
+AXP,American Express,Financiero,EE.UU.,EE.UU.
+AIG,American International Group,Financiero,EE.UU.,EE.UU.
+AMT,American Tower,Inmobiliario,EE.UU.,EE.UU.
+AWK,American Water Works,Servicios públicos,EE.UU.,EE.UU.
+AMP,Ameriprise Financial,Financiero,EE.UU.,EE.UU.
+AME,Ametek,Industria,EE.UU.,EE.UU.
+AMGN,Amgen,Salud,EE.UU.,EE.UU.
+APH,Amphenol,Tecnología,EE.UU.,EE.UU.
+ADI,Analog Devices,Tecnología,EE.UU.,EE.UU.
+AON,Aon plc,Financiero,EE.UU.,EE.UU.
+APA,APA Corporation,Energía,EE.UU.,EE.UU.
+APO,Apollo Global Management,Financiero,EE.UU.,EE.UU.
+AAPL,Apple Inc.,Tecnología,EE.UU.,EE.UU.
+AMAT,Applied Materials,Tecnología,EE.UU.,EE.UU.
+APTV,Aptiv,Consumo discrecional,EE.UU.,EE.UU.
+ACGL,Arch Capital Group,Financiero,EE.UU.,EE.UU.
+ADM,Archer Daniels Midland,Consumo básico,EE.UU.,EE.UU.
+ARES,Ares Management,Financiero,EE.UU.,EE.UU.
+ANET,Arista Networks,Tecnología,EE.UU.,EE.UU.
+AJG,Arthur J. Gallagher & Co.,Financiero,EE.UU.,EE.UU.
+AIZ,Assurant,Financiero,EE.UU.,EE.UU.
+T,AT&T,Comunicación,EE.UU.,EE.UU.
+ATO,Atmos Energy,Servicios públicos,EE.UU.,EE.UU.
+ADSK,Autodesk,Tecnología,EE.UU.,EE.UU.
+ADP,Automatic Data Processing,Industria,EE.UU.,EE.UU.
+AZO,AutoZone,Consumo discrecional,EE.UU.,EE.UU.
+AVY,Avery Dennison,Materiales,EE.UU.,EE.UU.
+AXON,Axon Enterprise,Industria,EE.UU.,EE.UU.
+BKR,Baker Hughes,Energía,EE.UU.,EE.UU.
+BALL,Ball Corporation,Materiales,EE.UU.,EE.UU.
+BAC,Bank of America,Financiero,EE.UU.,EE.UU.
+BAX,Baxter International,Salud,EE.UU.,EE.UU.
+BDX,Becton Dickinson,Salud,EE.UU.,EE.UU.
+BRK-B,Berkshire Hathaway,Financiero,EE.UU.,EE.UU.
+BBY,Best Buy,Consumo discrecional,EE.UU.,EE.UU.
+TECH,Bio-Techne,Salud,EE.UU.,EE.UU.
+BIIB,Biogen,Salud,EE.UU.,EE.UU.
+BLK,BlackRock,Financiero,EE.UU.,EE.UU.
+BX,Blackstone Inc.,Financiero,EE.UU.,EE.UU.
+BNY,BNY Mellon,Financiero,EE.UU.,EE.UU.
+BA,Boeing,Industria,EE.UU.,EE.UU.
+BKNG,Booking Holdings,Consumo discrecional,EE.UU.,EE.UU.
+BSX,Boston Scientific,Salud,EE.UU.,EE.UU.
+BMY,Bristol Myers Squibb,Salud,EE.UU.,EE.UU.
+AVGO,Broadcom,Tecnología,EE.UU.,EE.UU.
+BR,Broadridge Financial Solutions,Industria,EE.UU.,EE.UU.
+BRO,Brown & Brown,Financiero,EE.UU.,EE.UU.
+BF-B,Brown–Forman,Consumo básico,EE.UU.,EE.UU.
+BG,Bunge Global,Consumo básico,EE.UU.,EE.UU.
+BXP,"BXP, Inc.",Inmobiliario,EE.UU.,EE.UU.
+CHRW,C.H. Robinson,Industria,EE.UU.,EE.UU.
+CDNS,Cadence Design Systems,Tecnología,EE.UU.,EE.UU.
+CPT,Camden Property Trust,Inmobiliario,EE.UU.,EE.UU.
+COF,Capital One,Financiero,EE.UU.,EE.UU.
+CAH,Cardinal Health,Salud,EE.UU.,EE.UU.
+CCL,Carnival Corporation,Consumo discrecional,EE.UU.,EE.UU.
+CASY,Casey's,Consumo básico,EE.UU.,EE.UU.
+CAT,Caterpillar Inc.,Industria,EE.UU.,EE.UU.
+CBOE,Cboe Global Markets,Financiero,EE.UU.,EE.UU.
+CBRE,CBRE Group,Inmobiliario,EE.UU.,EE.UU.
+CDW,CDW Corporation,Tecnología,EE.UU.,EE.UU.
+COR,Cencora,Salud,EE.UU.,EE.UU.
+CNC,Centene Corporation,Salud,EE.UU.,EE.UU.
+CNP,CenterPoint Energy,Servicios públicos,EE.UU.,EE.UU.
+CF,CF Industries,Materiales,EE.UU.,EE.UU.
+CRL,Charles River Laboratories,Salud,EE.UU.,EE.UU.
+SCHW,Charles Schwab Corporation,Financiero,EE.UU.,EE.UU.
+CHTR,Charter Communications,Comunicación,EE.UU.,EE.UU.
+CVX,Chevron Corporation,Energía,EE.UU.,EE.UU.
+CMG,Chipotle Mexican Grill,Consumo discrecional,EE.UU.,EE.UU.
+CB,Chubb Limited,Financiero,EE.UU.,EE.UU.
+CHD,Church & Dwight,Consumo básico,EE.UU.,EE.UU.
+CIEN,Ciena,Tecnología,EE.UU.,EE.UU.
+CI,Cigna,Salud,EE.UU.,EE.UU.
+CINF,Cincinnati Financial,Financiero,EE.UU.,EE.UU.
+CTAS,Cintas,Industria,EE.UU.,EE.UU.
+CSCO,Cisco,Tecnología,EE.UU.,EE.UU.
+C,Citigroup,Financiero,EE.UU.,EE.UU.
+CFG,Citizens Financial Group,Financiero,EE.UU.,EE.UU.
+CLX,Clorox,Consumo básico,EE.UU.,EE.UU.
+CME,CME Group,Financiero,EE.UU.,EE.UU.
+CMS,CMS Energy,Servicios públicos,EE.UU.,EE.UU.
+KO,Coca-Cola Company (The),Consumo básico,EE.UU.,EE.UU.
+CTSH,Cognizant,Tecnología,EE.UU.,EE.UU.
+COHR,Coherent Corp.,Tecnología,EE.UU.,EE.UU.
+CL,Colgate-Palmolive,Consumo básico,EE.UU.,EE.UU.
+CMCSA,Comcast,Comunicación,EE.UU.,EE.UU.
+FIX,Comfort Systems USA,Industria,EE.UU.,EE.UU.
+COP,ConocoPhillips,Energía,EE.UU.,EE.UU.
+ED,Consolidated Edison,Servicios públicos,EE.UU.,EE.UU.
+STZ,Constellation Brands,Consumo básico,EE.UU.,EE.UU.
+COO,Cooper Companies (The),Salud,EE.UU.,EE.UU.
+CPRT,Copart,Industria,EE.UU.,EE.UU.
+GLW,Corning Inc.,Tecnología,EE.UU.,EE.UU.
+CPAY,Corpay,Financiero,EE.UU.,EE.UU.
+CSGP,CoStar Group,Inmobiliario,EE.UU.,EE.UU.
+COST,Costco,Consumo básico,EE.UU.,EE.UU.
+CRH,CRH plc,Materiales,EE.UU.,EE.UU.
+CCI,Crown Castle,Inmobiliario,EE.UU.,EE.UU.
+CSX,CSX Corporation,Industria,EE.UU.,EE.UU.
+CMI,Cummins,Industria,EE.UU.,EE.UU.
+CVS,CVS Health,Salud,EE.UU.,EE.UU.
+DHR,Danaher Corporation,Salud,EE.UU.,EE.UU.
+DRI,Darden Restaurants,Consumo discrecional,EE.UU.,EE.UU.
+DVA,DaVita,Salud,EE.UU.,EE.UU.
+DECK,Deckers Brands,Consumo discrecional,EE.UU.,EE.UU.
+DE,Deere & Company,Industria,EE.UU.,EE.UU.
+DAL,Delta Air Lines,Industria,EE.UU.,EE.UU.
+DVN,Devon Energy,Energía,EE.UU.,EE.UU.
+DXCM,Dexcom,Salud,EE.UU.,EE.UU.
+FANG,Diamondback Energy,Energía,EE.UU.,EE.UU.
+DLR,Digital Realty,Inmobiliario,EE.UU.,EE.UU.
+DG,Dollar General,Consumo básico,EE.UU.,EE.UU.
+DLTR,Dollar Tree,Consumo básico,EE.UU.,EE.UU.
+D,Dominion Energy,Servicios públicos,EE.UU.,EE.UU.
+DPZ,Domino's,Consumo discrecional,EE.UU.,EE.UU.
+DOV,Dover Corporation,Industria,EE.UU.,EE.UU.
+DHI,D. R. Horton,Consumo discrecional,EE.UU.,EE.UU.
+DTE,DTE Energy,Servicios públicos,EE.UU.,EE.UU.
+DUK,Duke Energy,Servicios públicos,EE.UU.,EE.UU.
+DD,DuPont,Industria,EE.UU.,EE.UU.
+ETN,Eaton Corporation,Industria,EE.UU.,EE.UU.
+EBAY,eBay Inc.,Consumo discrecional,EE.UU.,EE.UU.
+ECHO,EchoStar,Comunicación,EE.UU.,EE.UU.
+ECL,Ecolab,Materiales,EE.UU.,EE.UU.
+EIX,Edison International,Servicios públicos,EE.UU.,EE.UU.
+EW,Edwards Lifesciences,Salud,EE.UU.,EE.UU.
+ELV,Elevance Health,Salud,EE.UU.,EE.UU.
+EME,Emcor,Industria,EE.UU.,EE.UU.
+EMR,Emerson Electric,Industria,EE.UU.,EE.UU.
+ETR,Entergy,Servicios públicos,EE.UU.,EE.UU.
+EOG,EOG Resources,Energía,EE.UU.,EE.UU.
+EQT,EQT Corporation,Energía,EE.UU.,EE.UU.
+EFX,Equifax,Industria,EE.UU.,EE.UU.
+EQIX,Equinix,Inmobiliario,EE.UU.,EE.UU.
+ERIE,Erie Indemnity,Financiero,EE.UU.,EE.UU.
+ESS,Essex Property Trust,Inmobiliario,EE.UU.,EE.UU.
+EL,Estée Lauder Companies (The),Consumo básico,EE.UU.,EE.UU.
+EG,Everest Group,Financiero,EE.UU.,EE.UU.
+EVRG,Evergy,Servicios públicos,EE.UU.,EE.UU.
+ES,Eversource Energy,Servicios públicos,EE.UU.,EE.UU.
+EXC,Exelon,Servicios públicos,EE.UU.,EE.UU.
+EXPE,Expedia Group,Consumo discrecional,EE.UU.,EE.UU.
+EXPD,Expeditors International,Industria,EE.UU.,EE.UU.
+EXR,Extra Space Storage,Inmobiliario,EE.UU.,EE.UU.
+XOM,ExxonMobil,Energía,EE.UU.,EE.UU.
+FFIV,"F5, Inc.",Tecnología,EE.UU.,EE.UU.
+FDS,FactSet,Financiero,EE.UU.,EE.UU.
+FICO,Fair Isaac,Tecnología,EE.UU.,EE.UU.
+FAST,Fastenal,Industria,EE.UU.,EE.UU.
+FRT,Federal Realty Investment Trust,Inmobiliario,EE.UU.,EE.UU.
+FDX,FedEx,Industria,EE.UU.,EE.UU.
+FERG,Ferguson Enterprises,Industria,EE.UU.,EE.UU.
+FIS,Fidelity National Information Services,Financiero,EE.UU.,EE.UU.
+FITB,Fifth Third Bancorp,Financiero,EE.UU.,EE.UU.
+FSLR,First Solar,Tecnología,EE.UU.,EE.UU.
+FE,FirstEnergy,Servicios públicos,EE.UU.,EE.UU.
+FISV,Fiserv,Financiero,EE.UU.,EE.UU.
+FLEX,Flex Ltd.,Tecnología,EE.UU.,EE.UU.
+F,Ford Motor Company,Consumo discrecional,EE.UU.,EE.UU.
+FTNT,Fortinet,Tecnología,EE.UU.,EE.UU.
+BEN,Franklin Resources,Financiero,EE.UU.,EE.UU.
+FCX,Freeport-McMoRan,Materiales,EE.UU.,EE.UU.
+GRMN,Garmin,Consumo discrecional,EE.UU.,EE.UU.
+IT,Gartner,Tecnología,EE.UU.,EE.UU.
+GE,GE Aerospace,Industria,EE.UU.,EE.UU.
+GEN,Gen Digital,Tecnología,EE.UU.,EE.UU.
+GNRC,Generac,Industria,EE.UU.,EE.UU.
+GD,General Dynamics,Industria,EE.UU.,EE.UU.
+GIS,General Mills,Consumo básico,EE.UU.,EE.UU.
+GM,General Motors,Consumo discrecional,EE.UU.,EE.UU.
+GPC,Genuine Parts Company,Consumo discrecional,EE.UU.,EE.UU.
+GILD,Gilead Sciences,Salud,EE.UU.,EE.UU.
+GPN,Global Payments,Financiero,EE.UU.,EE.UU.
+GL,Globe Life,Financiero,EE.UU.,EE.UU.
+GS,Goldman Sachs,Financiero,EE.UU.,EE.UU.
+HAL,Halliburton,Energía,EE.UU.,EE.UU.
+HIG,Hartford (The),Financiero,EE.UU.,EE.UU.
+HAS,Hasbro,Consumo discrecional,EE.UU.,EE.UU.
+HCA,HCA Healthcare,Salud,EE.UU.,EE.UU.
+DOC,Healthpeak Properties,Inmobiliario,EE.UU.,EE.UU.
+HSIC,Henry Schein,Salud,EE.UU.,EE.UU.
+HSY,Hershey Company (The),Consumo básico,EE.UU.,EE.UU.
+HLT,Hilton Worldwide,Consumo discrecional,EE.UU.,EE.UU.
+HD,Home Depot (The),Consumo discrecional,EE.UU.,EE.UU.
+HON,Honeywell Technologies,Industria,EE.UU.,EE.UU.
+HRL,Hormel Foods,Consumo básico,EE.UU.,EE.UU.
+HST,Host Hotels & Resorts,Inmobiliario,EE.UU.,EE.UU.
+HPQ,HP Inc.,Tecnología,EE.UU.,EE.UU.
+HUBB,Hubbell Incorporated,Industria,EE.UU.,EE.UU.
+HUM,Humana,Salud,EE.UU.,EE.UU.
+HBAN,Huntington Bancshares,Financiero,EE.UU.,EE.UU.
+HII,Huntington Ingalls Industries,Industria,EE.UU.,EE.UU.
+IBM,IBM,Tecnología,EE.UU.,EE.UU.
+IEX,IDEX Corporation,Industria,EE.UU.,EE.UU.
+IDXX,Idexx Laboratories,Salud,EE.UU.,EE.UU.
+ITW,Illinois Tool Works,Industria,EE.UU.,EE.UU.
+ILMN,"Illumina, Inc.",Salud,EE.UU.,EE.UU.
+INCY,Incyte,Salud,EE.UU.,EE.UU.
+PODD,Insulet Corporation,Salud,EE.UU.,EE.UU.
+INTC,Intel,Tecnología,EE.UU.,EE.UU.
+IBKR,Interactive Brokers,Financiero,EE.UU.,EE.UU.
+ICE,Intercontinental Exchange,Financiero,EE.UU.,EE.UU.
+IFF,International Flavors & Fragrances,Materiales,EE.UU.,EE.UU.
+IP,International Paper,Materiales,EE.UU.,EE.UU.
+INTU,Intuit,Tecnología,EE.UU.,EE.UU.
+ISRG,Intuitive Surgical,Salud,EE.UU.,EE.UU.
+IVZ,Invesco,Financiero,EE.UU.,EE.UU.
+IQV,IQVIA,Salud,EE.UU.,EE.UU.
+IRM,Iron Mountain,Inmobiliario,EE.UU.,EE.UU.
+JBHT,J.B. Hunt,Industria,EE.UU.,EE.UU.
+JBL,Jabil,Tecnología,EE.UU.,EE.UU.
+JKHY,Jack Henry & Associates,Financiero,EE.UU.,EE.UU.
+J,Jacobs Solutions,Industria,EE.UU.,EE.UU.
+JNJ,Johnson & Johnson,Salud,EE.UU.,EE.UU.
+JCI,Johnson Controls,Industria,EE.UU.,EE.UU.
+JPM,JPMorgan Chase,Financiero,EE.UU.,EE.UU.
+KDP,Keurig Dr Pepper,Consumo básico,EE.UU.,EE.UU.
+KEY,KeyCorp,Financiero,EE.UU.,EE.UU.
+KEYS,Keysight Technologies,Tecnología,EE.UU.,EE.UU.
+KMB,Kimberly-Clark,Consumo básico,EE.UU.,EE.UU.
+KIM,Kimco Realty,Inmobiliario,EE.UU.,EE.UU.
+KMI,Kinder Morgan,Energía,EE.UU.,EE.UU.
+KKR,KKR & Co.,Financiero,EE.UU.,EE.UU.
+KLAC,KLA Corporation,Tecnología,EE.UU.,EE.UU.
+KR,Kroger,Consumo básico,EE.UU.,EE.UU.
+LHX,L3Harris,Industria,EE.UU.,EE.UU.
+LH,Labcorp,Salud,EE.UU.,EE.UU.
+LRCX,Lam Research,Tecnología,EE.UU.,EE.UU.
+LVS,Las Vegas Sands,Consumo discrecional,EE.UU.,EE.UU.
+LDOS,Leidos,Industria,EE.UU.,EE.UU.
+LEN,Lennar,Consumo discrecional,EE.UU.,EE.UU.
+LII,Lennox International,Industria,EE.UU.,EE.UU.
+LLY,Lilly (Eli),Salud,EE.UU.,EE.UU.
+LIN,Linde plc,Materiales,EE.UU.,EE.UU.
+LYV,Live Nation Entertainment,Comunicación,EE.UU.,EE.UU.
+LMT,Lockheed Martin,Industria,EE.UU.,EE.UU.
+L,Loews Corporation,Financiero,EE.UU.,EE.UU.
+LOW,Lowe's,Consumo discrecional,EE.UU.,EE.UU.
+LULU,Lululemon Athletica,Consumo discrecional,EE.UU.,EE.UU.
+LYB,LyondellBasell,Materiales,EE.UU.,EE.UU.
+MTB,M&T Bank,Financiero,EE.UU.,EE.UU.
+MPC,Marathon Petroleum,Energía,EE.UU.,EE.UU.
+MAR,Marriott International,Consumo discrecional,EE.UU.,EE.UU.
+MRSH,Marsh McLennan,Financiero,EE.UU.,EE.UU.
+MLM,Martin Marietta Materials,Materiales,EE.UU.,EE.UU.
+MRVL,Marvell Technology,Tecnología,EE.UU.,EE.UU.
+MAS,Masco,Industria,EE.UU.,EE.UU.
+MA,Mastercard,Financiero,EE.UU.,EE.UU.
+MKC,McCormick & Company,Consumo básico,EE.UU.,EE.UU.
+MCD,McDonald's,Consumo discrecional,EE.UU.,EE.UU.
+MCK,McKesson,Salud,EE.UU.,EE.UU.
+MDT,Medtronic,Salud,EE.UU.,EE.UU.
+MRK,Merck & Co.,Salud,EE.UU.,EE.UU.
+META,Meta Platforms,Comunicación,EE.UU.,EE.UU.
+MET,MetLife,Financiero,EE.UU.,EE.UU.
+MTD,Mettler Toledo,Salud,EE.UU.,EE.UU.
+MGM,MGM Resorts,Consumo discrecional,EE.UU.,EE.UU.
+MCHP,Microchip Technology,Tecnología,EE.UU.,EE.UU.
+MU,Micron Technology,Tecnología,EE.UU.,EE.UU.
+MSFT,Microsoft,Tecnología,EE.UU.,EE.UU.
+MAA,Mid-America Apartment Communities,Inmobiliario,EE.UU.,EE.UU.
+MDLZ,Mondelez International,Consumo básico,EE.UU.,EE.UU.
+MPWR,Monolithic Power Systems,Tecnología,EE.UU.,EE.UU.
+MNST,Monster Beverage,Consumo básico,EE.UU.,EE.UU.
+MCO,Moody's Corporation,Financiero,EE.UU.,EE.UU.
+MS,Morgan Stanley,Financiero,EE.UU.,EE.UU.
+MOS,Mosaic Company (The),Materiales,EE.UU.,EE.UU.
+MSI,Motorola Solutions,Tecnología,EE.UU.,EE.UU.
+MSCI,MSCI,Financiero,EE.UU.,EE.UU.
+NDAQ,"Nasdaq, Inc.",Financiero,EE.UU.,EE.UU.
+NTAP,NetApp,Tecnología,EE.UU.,EE.UU.
+NFLX,Netflix,Comunicación,EE.UU.,EE.UU.
+NEM,Newmont,Materiales,EE.UU.,EE.UU.
+NWSA,News Corp (Class A),Comunicación,EE.UU.,EE.UU.
+NWS,News Corp (Class B),Comunicación,EE.UU.,EE.UU.
+NEE,NextEra Energy,Servicios públicos,EE.UU.,EE.UU.
+NKE,"Nike, Inc.",Consumo discrecional,EE.UU.,EE.UU.
+NI,NiSource,Servicios públicos,EE.UU.,EE.UU.
+NDSN,Nordson Corporation,Industria,EE.UU.,EE.UU.
+NSC,Norfolk Southern,Industria,EE.UU.,EE.UU.
+NTRS,Northern Trust,Financiero,EE.UU.,EE.UU.
+NOC,Northrop Grumman,Industria,EE.UU.,EE.UU.
+NCLH,Norwegian Cruise Line Holdings,Consumo discrecional,EE.UU.,EE.UU.
+NRG,NRG Energy,Servicios públicos,EE.UU.,EE.UU.
+NUE,Nucor,Materiales,EE.UU.,EE.UU.
+NVDA,Nvidia,Tecnología,EE.UU.,EE.UU.
+NVR,"NVR, Inc.",Consumo discrecional,EE.UU.,EE.UU.
+NXPI,NXP Semiconductors,Tecnología,EE.UU.,EE.UU.
+ORLY,O'Reilly Automotive,Consumo discrecional,EE.UU.,EE.UU.
+OXY,Occidental Petroleum,Energía,EE.UU.,EE.UU.
+ODFL,Old Dominion,Industria,EE.UU.,EE.UU.
+OMC,Omnicom Group,Comunicación,EE.UU.,EE.UU.
+ON,ON Semiconductor,Tecnología,EE.UU.,EE.UU.
+OKE,Oneok,Energía,EE.UU.,EE.UU.
+ORCL,Oracle Corporation,Tecnología,EE.UU.,EE.UU.
+PCAR,Paccar,Industria,EE.UU.,EE.UU.
+PKG,Packaging Corporation of America,Materiales,EE.UU.,EE.UU.
+PANW,Palo Alto Networks,Tecnología,EE.UU.,EE.UU.
+PH,Parker Hannifin,Industria,EE.UU.,EE.UU.
+PAYX,Paychex,Industria,EE.UU.,EE.UU.
+PNR,Pentair,Industria,EE.UU.,EE.UU.
+PEP,PepsiCo,Consumo básico,EE.UU.,EE.UU.
+PFE,Pfizer,Salud,EE.UU.,EE.UU.
+PCG,PG&E Corporation,Servicios públicos,EE.UU.,EE.UU.
+PM,Philip Morris International,Consumo básico,EE.UU.,EE.UU.
+PSX,Phillips 66,Energía,EE.UU.,EE.UU.
+PNW,Pinnacle West Capital,Servicios públicos,EE.UU.,EE.UU.
+PNC,PNC Financial Services,Financiero,EE.UU.,EE.UU.
+PPG,PPG Industries,Materiales,EE.UU.,EE.UU.
+PPL,PPL Corporation,Servicios públicos,EE.UU.,EE.UU.
+PFG,Principal Financial Group,Financiero,EE.UU.,EE.UU.
+PG,Procter & Gamble,Consumo básico,EE.UU.,EE.UU.
+PGR,Progressive Corporation,Financiero,EE.UU.,EE.UU.
+PLD,Prologis,Inmobiliario,EE.UU.,EE.UU.
+PRU,Prudential Financial,Financiero,EE.UU.,EE.UU.
+PTC,PTC Inc.,Tecnología,EE.UU.,EE.UU.
+PEG,Public Service Enterprise Group,Servicios públicos,EE.UU.,EE.UU.
+PSA,Public Storage,Inmobiliario,EE.UU.,EE.UU.
+PHM,PulteGroup,Consumo discrecional,EE.UU.,EE.UU.
+QCOM,Qualcomm,Tecnología,EE.UU.,EE.UU.
+PWR,Quanta Services,Industria,EE.UU.,EE.UU.
+DGX,Quest Diagnostics,Salud,EE.UU.,EE.UU.
+RL,Ralph Lauren Corporation,Consumo discrecional,EE.UU.,EE.UU.
+RJF,Raymond James Financial,Financiero,EE.UU.,EE.UU.
+O,Realty Income,Inmobiliario,EE.UU.,EE.UU.
+REG,Regency Centers,Inmobiliario,EE.UU.,EE.UU.
+REGN,Regeneron Pharmaceuticals,Salud,EE.UU.,EE.UU.
+RF,Regions Financial Corporation,Financiero,EE.UU.,EE.UU.
+RSG,Republic Services,Industria,EE.UU.,EE.UU.
+RMD,ResMed,Salud,EE.UU.,EE.UU.
+RVTY,Revvity,Salud,EE.UU.,EE.UU.
+ROK,Rockwell Automation,Industria,EE.UU.,EE.UU.
+ROL,"Rollins, Inc.",Industria,EE.UU.,EE.UU.
+ROP,Roper Technologies,Tecnología,EE.UU.,EE.UU.
+ROST,Ross Stores,Consumo discrecional,EE.UU.,EE.UU.
+RCL,Royal Caribbean Group,Consumo discrecional,EE.UU.,EE.UU.
+RTX,RTX Corporation,Industria,EE.UU.,EE.UU.
+SPGI,S&P Global,Financiero,EE.UU.,EE.UU.
+CRM,Salesforce,Tecnología,EE.UU.,EE.UU.
+SBAC,SBA Communications,Inmobiliario,EE.UU.,EE.UU.
+SLB,Schlumberger,Energía,EE.UU.,EE.UU.
+STX,Seagate Technology,Tecnología,EE.UU.,EE.UU.
+SRE,Sempra,Servicios públicos,EE.UU.,EE.UU.
+NOW,ServiceNow,Tecnología,EE.UU.,EE.UU.
+SHW,Sherwin-Williams,Materiales,EE.UU.,EE.UU.
+SPG,Simon Property Group,Inmobiliario,EE.UU.,EE.UU.
+SKYD,Skydance,Comunicación,EE.UU.,EE.UU.
+SWKS,Skyworks Solutions,Tecnología,EE.UU.,EE.UU.
+SJM,J.M. Smucker Company (The),Consumo básico,EE.UU.,EE.UU.
+SW,Smurfit Westrock,Materiales,EE.UU.,EE.UU.
+SNA,Snap-on,Industria,EE.UU.,EE.UU.
+SO,Southern Company,Servicios públicos,EE.UU.,EE.UU.
+LUV,Southwest Airlines,Industria,EE.UU.,EE.UU.
+SWK,Stanley Black & Decker,Industria,EE.UU.,EE.UU.
+SBUX,Starbucks,Consumo discrecional,EE.UU.,EE.UU.
+STT,State Street Corporation,Financiero,EE.UU.,EE.UU.
+STLD,Steel Dynamics,Materiales,EE.UU.,EE.UU.
+STE,Steris,Salud,EE.UU.,EE.UU.
+SYK,Stryker Corporation,Salud,EE.UU.,EE.UU.
+SMCI,Supermicro,Tecnología,EE.UU.,EE.UU.
+SYF,Synchrony Financial,Financiero,EE.UU.,EE.UU.
+SNPS,Synopsys,Tecnología,EE.UU.,EE.UU.
+SYY,Sysco,Consumo básico,EE.UU.,EE.UU.
+TMUS,T-Mobile US,Comunicación,EE.UU.,EE.UU.
+TROW,T. Rowe Price,Financiero,EE.UU.,EE.UU.
+TTWO,Take-Two Interactive,Comunicación,EE.UU.,EE.UU.
+TPR,"Tapestry, Inc.",Consumo discrecional,EE.UU.,EE.UU.
+TRGP,Targa Resources,Energía,EE.UU.,EE.UU.
+TGT,Target Corporation,Consumo básico,EE.UU.,EE.UU.
+TEL,TE Connectivity,Tecnología,EE.UU.,EE.UU.
+TDY,Teledyne Technologies,Tecnología,EE.UU.,EE.UU.
+TER,Teradyne,Tecnología,EE.UU.,EE.UU.
+TSLA,"Tesla, Inc.",Consumo discrecional,EE.UU.,EE.UU.
+TXN,Texas Instruments,Tecnología,EE.UU.,EE.UU.
+TPL,Texas Pacific Land Corporation,Energía,EE.UU.,EE.UU.
+TXT,Textron,Industria,EE.UU.,EE.UU.
+TMO,Thermo Fisher Scientific,Salud,EE.UU.,EE.UU.
+TJX,TJX Companies,Consumo discrecional,EE.UU.,EE.UU.
+TKO,TKO Group Holdings,Comunicación,EE.UU.,EE.UU.
+TSCO,Tractor Supply,Consumo discrecional,EE.UU.,EE.UU.
+TT,Trane Technologies,Industria,EE.UU.,EE.UU.
+TDG,TransDigm Group,Industria,EE.UU.,EE.UU.
+TRV,Travelers Companies (The),Financiero,EE.UU.,EE.UU.
+TRMB,Trimble Inc.,Tecnología,EE.UU.,EE.UU.
+TFC,Truist Financial,Financiero,EE.UU.,EE.UU.
+TYL,Tyler Technologies,Tecnología,EE.UU.,EE.UU.
+TSN,Tyson Foods,Consumo básico,EE.UU.,EE.UU.
+USB,U.S. Bancorp,Financiero,EE.UU.,EE.UU.
+UDR,"UDR, Inc.",Inmobiliario,EE.UU.,EE.UU.
+ULTA,Ulta Beauty,Consumo discrecional,EE.UU.,EE.UU.
+UNP,Union Pacific Corporation,Industria,EE.UU.,EE.UU.
+UAL,United Airlines Holdings,Industria,EE.UU.,EE.UU.
+UPS,United Parcel Service,Industria,EE.UU.,EE.UU.
+URI,United Rentals,Industria,EE.UU.,EE.UU.
+UNH,UnitedHealth Group,Salud,EE.UU.,EE.UU.
+UHS,Universal Health Services,Salud,EE.UU.,EE.UU.
+VLO,Valero Energy,Energía,EE.UU.,EE.UU.
+VEEV,Veeva Systems,Salud,EE.UU.,EE.UU.
+VTR,Ventas,Inmobiliario,EE.UU.,EE.UU.
+VRSN,Verisign,Tecnología,EE.UU.,EE.UU.
+VRSK,Verisk Analytics,Industria,EE.UU.,EE.UU.
+VZ,Verizon,Comunicación,EE.UU.,EE.UU.
+VRTX,Vertex Pharmaceuticals,Salud,EE.UU.,EE.UU.
+VTRS,Viatris,Salud,EE.UU.,EE.UU.
+V,Visa Inc.,Financiero,EE.UU.,EE.UU.
+VMRK,Vivmark Residential,Inmobiliario,EE.UU.,EE.UU.
+VMC,Vulcan Materials Company,Materiales,EE.UU.,EE.UU.
+WRB,W. R. Berkley Corporation,Financiero,EE.UU.,EE.UU.
+GWW,W. W. Grainger,Industria,EE.UU.,EE.UU.
+WAB,Wabtec,Industria,EE.UU.,EE.UU.
+WMT,Walmart,Consumo básico,EE.UU.,EE.UU.
+DIS,Walt Disney Company (The),Comunicación,EE.UU.,EE.UU.
+WM,Waste Management,Industria,EE.UU.,EE.UU.
+WAT,Waters Corporation,Salud,EE.UU.,EE.UU.
+WEC,WEC Energy Group,Servicios públicos,EE.UU.,EE.UU.
+WFC,Wells Fargo,Financiero,EE.UU.,EE.UU.
+WELL,Welltower,Inmobiliario,EE.UU.,EE.UU.
+WST,West Pharmaceutical Services,Salud,EE.UU.,EE.UU.
+WDC,Western Digital,Tecnología,EE.UU.,EE.UU.
+WY,Weyerhaeuser,Inmobiliario,EE.UU.,EE.UU.
+WSM,"Williams-Sonoma, Inc.",Consumo discrecional,EE.UU.,EE.UU.
+WMB,Williams Companies,Energía,EE.UU.,EE.UU.
+WTW,Willis Towers Watson,Financiero,EE.UU.,EE.UU.
+WDAY,"Workday, Inc.",Tecnología,EE.UU.,EE.UU.
+WYNN,Wynn Resorts,Consumo discrecional,EE.UU.,EE.UU.
+XEL,Xcel Energy,Servicios públicos,EE.UU.,EE.UU.
+XYL,Xylem Inc.,Industria,EE.UU.,EE.UU.
+YUM,Yum! Brands,Consumo discrecional,EE.UU.,EE.UU.
+ZBRA,Zebra Technologies,Tecnología,EE.UU.,EE.UU.
+ZBH,Zimmer Biomet,Salud,EE.UU.,EE.UU.
+ZTS,Zoetis,Salud,EE.UU.,EE.UU.
+TSM,Taiwan Semiconductor,Tecnología,Fuera de EE.UU.,Taiwán
+ASML,ASML Holding,Tecnología,Fuera de EE.UU.,Países Bajos
+SAP,SAP,Tecnología,Fuera de EE.UU.,Alemania
+INFY,Infosys,Tecnología,Fuera de EE.UU.,India
+WIT,Wipro,Tecnología,Fuera de EE.UU.,India
+UMC,United Microelectronics,Tecnología,Fuera de EE.UU.,Taiwán
+ASX,ASE Technology,Tecnología,Fuera de EE.UU.,Taiwán
+STM,STMicroelectronics,Tecnología,Fuera de EE.UU.,Suiza
+ERIC,Ericsson,Tecnología,Fuera de EE.UU.,Suecia
+NOK,Nokia,Tecnología,Fuera de EE.UU.,Finlandia
+CHKP,Check Point Software,Tecnología,Fuera de EE.UU.,Israel
+NICE,NICE,Tecnología,Fuera de EE.UU.,Israel
+LOGI,Logitech,Tecnología,Fuera de EE.UU.,Suiza
+GLOB,Globant,Tecnología,Fuera de EE.UU.,Argentina
+HSBC,HSBC,Financiero,Fuera de EE.UU.,Reino Unido
+BCS,Barclays,Financiero,Fuera de EE.UU.,Reino Unido
+LYG,Lloyds,Financiero,Fuera de EE.UU.,Reino Unido
+DB,Deutsche Bank,Financiero,Fuera de EE.UU.,Alemania
+UBS,UBS,Financiero,Fuera de EE.UU.,Suiza
+ING,ING,Financiero,Fuera de EE.UU.,Países Bajos
+SAN,Banco Santander,Financiero,Fuera de EE.UU.,España
+BBVA,BBVA,Financiero,Fuera de EE.UU.,España
+MUFG,Mitsubishi UFJ,Financiero,Fuera de EE.UU.,Japón
+SMFG,Sumitomo Mitsui,Financiero,Fuera de EE.UU.,Japón
+MFG,Mizuho,Financiero,Fuera de EE.UU.,Japón
+HDB,HDFC Bank,Financiero,Fuera de EE.UU.,India
+IBN,ICICI Bank,Financiero,Fuera de EE.UU.,India
+ITUB,Itaú Unibanco,Financiero,Fuera de EE.UU.,Brasil
+BBD,Bradesco,Financiero,Fuera de EE.UU.,Brasil
+BAP,Credicorp,Financiero,Fuera de EE.UU.,Perú
+KB,KB Financial,Financiero,Fuera de EE.UU.,Corea del Sur
+SHG,Shinhan Financial,Financiero,Fuera de EE.UU.,Corea del Sur
+RY,Royal Bank of Canada,Financiero,Fuera de EE.UU.,Canadá
+TD,Toronto-Dominion Bank,Financiero,Fuera de EE.UU.,Canadá
+BNS,Scotiabank,Financiero,Fuera de EE.UU.,Canadá
+BMO,Bank of Montreal,Financiero,Fuera de EE.UU.,Canadá
+CM,CIBC,Financiero,Fuera de EE.UU.,Canadá
+MFC,Manulife,Financiero,Fuera de EE.UU.,Canadá
+SLF,Sun Life,Financiero,Fuera de EE.UU.,Canadá
+GGAL,Grupo Financiero Galicia,Financiero,Fuera de EE.UU.,Argentina
+BMA,Banco Macro,Financiero,Fuera de EE.UU.,Argentina
+BBAR,BBVA Argentina,Financiero,Fuera de EE.UU.,Argentina
+NVO,Novo Nordisk,Salud,Fuera de EE.UU.,Dinamarca
+AZN,AstraZeneca,Salud,Fuera de EE.UU.,Reino Unido
+NVS,Novartis,Salud,Fuera de EE.UU.,Suiza
+SNY,Sanofi,Salud,Fuera de EE.UU.,Francia
+GSK,GSK,Salud,Fuera de EE.UU.,Reino Unido
+TEVA,Teva,Salud,Fuera de EE.UU.,Israel
+PHG,Philips,Salud,Fuera de EE.UU.,Países Bajos
+SNN,Smith & Nephew,Salud,Fuera de EE.UU.,Reino Unido
+BP,BP,Energía,Fuera de EE.UU.,Reino Unido
+SHEL,Shell,Energía,Fuera de EE.UU.,Reino Unido
+TTE,TotalEnergies,Energía,Fuera de EE.UU.,Francia
+EQNR,Equinor,Energía,Fuera de EE.UU.,Noruega
+E,Eni,Energía,Fuera de EE.UU.,Italia
+PBR,Petrobras,Energía,Fuera de EE.UU.,Brasil
+YPF,YPF,Energía,Fuera de EE.UU.,Argentina
+TGS,Transportadora Gas del Sur,Energía,Fuera de EE.UU.,Argentina
+EC,Ecopetrol,Energía,Fuera de EE.UU.,Colombia
+SU,Suncor,Energía,Fuera de EE.UU.,Canadá
+CNQ,Canadian Natural,Energía,Fuera de EE.UU.,Canadá
+ENB,Enbridge,Energía,Fuera de EE.UU.,Canadá
+TRP,TC Energy,Energía,Fuera de EE.UU.,Canadá
+IMO,Imperial Oil,Energía,Fuera de EE.UU.,Canadá
+CVE,Cenovus,Energía,Fuera de EE.UU.,Canadá
+UL,Unilever,Consumo básico,Fuera de EE.UU.,Reino Unido
+BUD,AB InBev,Consumo básico,Fuera de EE.UU.,Bélgica
+DEO,Diageo,Consumo básico,Fuera de EE.UU.,Reino Unido
+BTI,British American Tobacco,Consumo básico,Fuera de EE.UU.,Reino Unido
+NSRGY,Nestlé,Consumo básico,Fuera de EE.UU.,Suiza
+FMX,FEMSA,Consumo básico,Fuera de EE.UU.,México
+KOF,Coca-Cola FEMSA,Consumo básico,Fuera de EE.UU.,México
+ABEV,Ambev,Consumo básico,Fuera de EE.UU.,Brasil
+CCU,CCU,Consumo básico,Fuera de EE.UU.,Chile
+CRESY,Cresud,Consumo básico,Fuera de EE.UU.,Argentina
+TM,Toyota,Consumo discrecional,Fuera de EE.UU.,Japón
+HMC,Honda,Consumo discrecional,Fuera de EE.UU.,Japón
+SONY,Sony,Consumo discrecional,Fuera de EE.UU.,Japón
+BABA,Alibaba,Consumo discrecional,Fuera de EE.UU.,China
+JD,JD.com,Consumo discrecional,Fuera de EE.UU.,China
+TCOM,Trip.com,Consumo discrecional,Fuera de EE.UU.,China
+LVMUY,LVMH,Consumo discrecional,Fuera de EE.UU.,Francia
+MELI,MercadoLibre,Consumo discrecional,Fuera de EE.UU.,Argentina
+CNI,Canadian National Railway,Industria,Fuera de EE.UU.,Canadá
+CP,Canadian Pacific Kansas City,Industria,Fuera de EE.UU.,Canadá
+CAE,CAE,Industria,Fuera de EE.UU.,Canadá
+TRI,Thomson Reuters,Industria,Fuera de EE.UU.,Canadá
+RELX,RELX,Industria,Fuera de EE.UU.,Reino Unido
+SIEGY,Siemens,Industria,Fuera de EE.UU.,Alemania
+PAC,Grupo Aeroportuario del Pacífico,Industria,Fuera de EE.UU.,México
+ASR,Grupo Aeroportuario del Sureste,Industria,Fuera de EE.UU.,México
+OMAB,Grupo Aeroportuario Centro Norte,Industria,Fuera de EE.UU.,México
+BHP,BHP,Materiales,Fuera de EE.UU.,Australia
+RIO,Rio Tinto,Materiales,Fuera de EE.UU.,Reino Unido
+VALE,Vale,Materiales,Fuera de EE.UU.,Brasil
+TX,Ternium,Materiales,Fuera de EE.UU.,Argentina
+SQM,SQM,Materiales,Fuera de EE.UU.,Chile
+MT,ArcelorMittal,Materiales,Fuera de EE.UU.,Luxemburgo
+PKX,POSCO,Materiales,Fuera de EE.UU.,Corea del Sur
+GGB,Gerdau,Materiales,Fuera de EE.UU.,Brasil
+SID,CSN,Materiales,Fuera de EE.UU.,Brasil
+GFI,Gold Fields,Materiales,Fuera de EE.UU.,Sudáfrica
+SCCO,Southern Copper,Materiales,Fuera de EE.UU.,Perú
+BAK,Braskem,Materiales,Fuera de EE.UU.,Brasil
+VOD,Vodafone,Comunicación,Fuera de EE.UU.,Reino Unido
+AMX,América Móvil,Comunicación,Fuera de EE.UU.,México
+BIDU,Baidu,Comunicación,Fuera de EE.UU.,China
+NTES,NetEase,Comunicación,Fuera de EE.UU.,China
+CHT,Chunghwa Telecom,Comunicación,Fuera de EE.UU.,Taiwán
+TLK,Telkom Indonesia,Comunicación,Fuera de EE.UU.,Indonesia
+SKM,SK Telecom,Comunicación,Fuera de EE.UU.,Corea del Sur
+TU,Telus,Comunicación,Fuera de EE.UU.,Canadá
+BCE,BCE,Comunicación,Fuera de EE.UU.,Canadá
+TEO,Telecom Argentina,Comunicación,Fuera de EE.UU.,Argentina
+NGG,National Grid,Servicios públicos,Fuera de EE.UU.,Reino Unido
+KEP,Korea Electric Power,Servicios públicos,Fuera de EE.UU.,Corea del Sur
+SBS,Sabesp,Servicios públicos,Fuera de EE.UU.,Brasil
+CIG,Cemig,Servicios públicos,Fuera de EE.UU.,Brasil
+PAM,Pampa Energía,Servicios públicos,Fuera de EE.UU.,Argentina
+EDN,Edenor,Servicios públicos,Fuera de EE.UU.,Argentina
+AQN,Algonquin Power,Servicios públicos,Fuera de EE.UU.,Canadá
+BEP,Brookfield Renewable,Servicios públicos,Fuera de EE.UU.,Canadá
+IRS,IRSA,Inmobiliario,Fuera de EE.UU.,Argentina

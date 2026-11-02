@@ -57,7 +57,7 @@ Pedidos del profesor a lo largo de las consultas:
 - **Restricciones:** sin ventas en corto, máximo 8% por acción, máximo 25% por sector, suma = 1. Después de optimizar, los pesos menores a 1% se eliminan y se reescala.
 - **Carteras:**
   - 9 optimizadas: 3 perfiles × 3 escenarios (sin dólar / fuerte / débil). Las "sin dólar" son la comparación principal.
-  - 3 dinámicas (una por perfil): miran la señal y usan la cartera de dólar fuerte o débil (frecuencia de revisión a definir: diaria o mensual, según cuántas veces cambie la señal en la sección 4).
+  - 3 dinámicas (una por perfil): miran la señal y usan la cartera de dólar fuerte o débil La señal se revisa **una vez por mes** (con datos reales cambia entre 1 y 25 veces por año; revisarla a diario haría rotar de más).
   - Referencias: **ACWI** (benchmark principal, acciones globales, se parece al universo), SPY (referencia), 1/N, y una cartera recomendada (pendiente: idealmente publicada por un ALyC o un diario a fines de 2022 / principios de 2023).
 - **Métricas** (para todas las carteras): volatilidad, VaR paramétrico/histórico/Monte Carlo, CVaR, drawdown máximo, volatilidad rolling, Sharpe, alfa y beta (CAPM contra ACWI), tracking error e information ratio contra ACWI, Sharpe separado por escenario del dólar.
 - **Stress tests:** Covid (feb–mar 2020), 2022 (dólar muy fuerte), escenario hipotético "dólar +10%" (beta de cada acción contra el DXY), Monte Carlo con la Σ de cada escenario.
@@ -90,7 +90,7 @@ CLAUDE.md           este archivo
 
 - [x] Repo, `CLAUDE.md`, `README.md`.
 - [x] Secciones 0 a 5 del notebook: configuración, universo, `DatosMercado`, resumen, `SenalDolar`, primera mirada por sector.
-- [ ] **Generar los datos reales** (correr con `descargar = True` en Colab y subir `data/`): pendiente de los integrantes.
+- [x] Datos reales generados el 02/11/2026 y subidos a `data/`: 580 acciones (457 S&P 500 + 123 ADR), 02/01/2015 a 02/11/2026, 50 descartadas.
 - [ ] Lun 02/11: sección 6 y 7 (μ y Σ por escenario, optimizador, 12 carteras).
 - [ ] Mar 03/11: sección 8 (métricas).
 - [ ] Mié 04/11: sección 9 (backtest, CAPM, tracking error, information ratio).
@@ -98,6 +98,12 @@ CLAUDE.md           este archivo
 - [ ] Mar 10/11: folleto en PDF.
 - [ ] Mié 11/11: presentación, ensayo y simulacro de preguntas.
 - [ ] Lun 16/11: presentación.
+
+## Hallazgos hasta ahora (datos reales)
+
+- Período de estimación (2015–2022): 1.282 días de dólar fuerte y 732 de dólar débil.
+- Retorno medio anual con dólar fuerte vs. débil: EE.UU. 12,7% vs. 21,4% (−8,6 pp); ADR 6,1% vs. 21,7% (−15,7 pp). Las acciones de afuera son más sensibles al dólar.
+- Sectores más sensibles: materiales (−19,9 pp), comunicación (−16,2), tecnología y financiero (−14,9). Menos sensibles: consumo básico (0) y servicios públicos (+1,8).
 
 ## Decisiones abiertas
 
