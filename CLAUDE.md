@@ -98,7 +98,7 @@ CLAUDE.md           este archivo
 - [x] Secciones 0 a 5 del notebook: configuración, universo, `DatosMercado`, resumen, `SenalDolar`, primera mirada por sector.
 - [x] Datos reales generados el 02/11/2026 y subidos a `data/`: 580 acciones (457 S&P 500 + 123 ADR), 02/01/2015 a 02/11/2026, 50 descartadas.
 - [x] Lun 09/11: configuración de indicadores y sección 6 (`IndicadoresMacro`: descarga de FRED de tasa a 2 años y M2).
-- [ ] **Bajar los indicadores reales en Colab y subir `data/indicadores.csv`** (pendiente de los integrantes; si el archivo no está, el notebook los baja solo de FRED).
+- [x] Indicadores reales bajados de FRED el 09/11/2026 y subidos a `data/indicadores.csv` (01/2013 a 11/2026; el M2 llega hasta 09/2026 porque se publica con atraso).
 - [ ] Sección 7: `PronosticoDolar` (índice compuesto, validación, confirmación).
 - [ ] Secciones 8 a 11: escenarios, μ y Σ, optimizador y carteras, recomendación de hoy.
 - [ ] Secciones 12 a 14: backtest y métricas, stress test, conclusiones.
