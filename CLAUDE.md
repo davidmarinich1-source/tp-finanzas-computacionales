@@ -59,7 +59,7 @@ Pedidos del profesor a lo largo de las consultas:
 - **Escenarios de estimación:** (1) sin considerar el dólar (todos los meses), (2) meses en que el DXY subió, (3) meses en que bajó. μ y Σ se estiman con los días de esos meses; Σ con Ledoit-Wolf (con ~600 acciones la Σ muestral tiene mucho ruido).
 - **Recomendación de hoy:** leer el índice con los últimos datos → escenario esperado para el mes siguiente → cartera recomendada por perfil (va al folleto). No se hace proyección a 12 meses con Monte Carlo (decisión del grupo); Monte Carlo se usa solo para el VaR.
 - **Perfiles:** Conservador, Moderado y Agresivo = función de utilidad de la Clase 8 con λ = 50, 10 y 3 (`CONFIG["lambdas"]`). En una prueba con datos reales dieron volatilidades esperadas de ~11%, ~14% y ~20%; SLSQP con 580 acciones tarda 2–9 s por cartera.
-- **Restricciones:** sin ventas en corto, máximo 8% por acción, máximo 25% por sector, suma = 1. Después de optimizar, los pesos menores a 1% se eliminan y se reescala.
+- **Restricciones:** sin ventas en corto, máximo 8% por acción, máximo 25% por sector, suma = 1. **Limpieza en dos pasadas:** se optimiza con todas, se quedan las de peso ≥ 1% (sumando las siguientes si no alcanzan para cumplir los topes) y se vuelve a optimizar solo con esas, así se cumplen exactamente los topes.
 - **Carteras:**
   - 9 optimizadas: 3 perfiles × 3 escenarios (sin dólar / fuerte / débil). Las "sin dólar" son la comparación principal.
   - Estrategias del backtest (por perfil, revisión **mensual**): sin señal, solo tendencia del DXY (reactiva), índice combinado, índice + confirmación, y "oráculo" (sabiendo qué hizo el dólar; techo teórico, no implementable).
@@ -100,7 +100,7 @@ CLAUDE.md           este archivo
 - [x] Lun 09/11: configuración de indicadores y sección 6 (`IndicadoresMacro`: descarga de FRED de tasa a 2 años y M2).
 - [x] Indicadores reales bajados de FRED el 09/11/2026 y subidos a `data/indicadores.csv` (01/2013 a 11/2026; el M2 llega hasta 09/2026 porque se publica con atraso).
 - [x] Lun 09/11: sección 7, `PronosticoDolar` (índice compuesto, correlaciones a 1/3/6 meses, aciertos, sensibilidad de la ventana, regla de confirmación). Parámetros nuevos en `CONFIG`: `medicion`, `signos`, `horizontes`, `ventanas_sensibilidad`.
-- [ ] Secciones 8 a 11: escenarios, μ y Σ, optimizador y carteras, recomendación de hoy.
+- [x] Lun 09/11: secciones 8 a 11. Clases `Escenarios` (meses de suba/baja del DXY), `Estimador` (μ y Σ anualizados por escenario, Σ vectorizada comprobada contra `np.cov` y Σ de Ledoit-Wolf), `Optimizador` (utilidad con λ, SLSQP, `jac`, topes, limpieza en dos pasadas), `Cartera` y `ConjuntoCarteras` (9 carteras, guardadas en `resultados/pesos_estimacion.csv` con datos hasta 2022 y `resultados/pesos_hoy.csv` con todos los datos). Recomendación de hoy en la sección 11. Optimizar las 18 carteras tarda ~1 min; con `recalcular = False` se cargan.
 - [ ] Secciones 12 a 14: backtest y métricas, stress test, conclusiones.
 - [ ] Mar 10/11 y Mié 11/11: folleto en PDF, presentación, ensayo y simulacro de preguntas.
 - [ ] Lun 16/11: presentación y entrega.
@@ -125,6 +125,14 @@ CLAUDE.md           este archivo
 - Se probaron 5 candidatos: tasa a 2 años, M2, diferencial EE.UU. − Europa (`DFF` − `ECBDFR`), tasa real a 10 años (`DFII10`) y curva 10a − 2a (`T10Y2Y`), eligiendo los 3 con mayor correlación con el DXY del mes siguiente (2015–2022). Quedaron M2, diferencial y tasa a 2 años; la tasa real se descartó por ir en contra de la teoría a 1 mes.
 - El índice de 3 subió la correlación (+0,18 a 1 mes, +0,32 a 3) pero bajó los aciertos de dirección (49% en 2015–2022, 53% en la prueba, contra 54% y 56% con tasa + M2). **El grupo decidió volver a tasa a 2 años + M2.** La versión con 5 candidatos queda en el historial de GitHub (commits `c00d604` y `6c3c0f3`) por si se quiere recuperar.
 - La tendencia del DXY (200 días) se deja afuera del índice a propósito: el índice mide causas (anticipatorias) y la tendencia es el propio dólar (reactiva); se usa como confirmación y como referencia en la tabla de aciertos.
+
+### Resultados de las carteras (secciones 8 a 11, datos reales)
+
+- Escenarios en 2015–2022: 54 meses de suba del dólar (1.129 días) y 42 de baja (884). En la prueba: 21 y 26.
+- Retorno medio anual con dólar en suba vs. en baja (mismo mes): EE.UU. −0,4% vs. 36,7%; fuera de EE.UU. −15,0% vs. 46,0%. Más sensibles: materiales y energía; menos: servicios públicos y consumo básico.
+- Σ: nuestra fórmula coincide con `np.cov` (diferencia 4e-19). Ledoit-Wolf encoge poco (0,02–0,04) pero baja el número de condición de ~70.000–135.000 a ~5.000–10.000.
+- Carteras (2015–2022): 16 a 31 acciones. Con dólar fuerte pesan consumo básico, financiero, industria e inmobiliario; con dólar débil, materiales, salud, financiero y energía, con más acciones de afuera (35–40% vs. 20–27%). Volatilidades esperadas: Conservador ~10–12%, Moderado ~13–17%, Agresivo ~18–26%. Los retornos "prometidos" con dólar débil son altísimos (in-sample: meses de baja del dólar fueron muy buenos para las acciones).
+- Recomendación de hoy (lectura 11/2026: índice +0,20, tendencia fuerte → dólar fuerte): Conservador 29 acciones (76% EE.UU.), Moderado 21 (92%), Agresivo 17 (98%); mucho consumo básico, industria y financiero.
 
 ## Decisiones abiertas
 

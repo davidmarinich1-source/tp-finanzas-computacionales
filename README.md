@@ -39,7 +39,7 @@ Se hace una vez (y opcionalmente antes de la entrega, para tener datos hasta la 
 |---|---|
 | `TP_HomeBias.ipynb` | El notebook con todo el trabajo |
 | `data/` | Datos descargados: precios, universo de acciones, índice del dólar, referencias |
-| `resultados/` | (próximamente) Pesos de las carteras y tablas de métricas |
+| `resultados/` | Pesos de las carteras: `pesos_estimacion.csv` (estimadas con 2015–2022, para el backtest) y `pesos_hoy.csv` (con todos los datos, para la recomendación de hoy) |
 | `folleto/` | (próximamente) Folleto comercial en PDF |
 | `CLAUDE.md` | Contexto completo del proyecto y decisiones tomadas |
 
