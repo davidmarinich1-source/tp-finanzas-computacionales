@@ -45,7 +45,10 @@ Pedidos del profesor a lo largo de las consultas:
 - **Clase 6:** Pandas: `read_csv`, limpieza (fechas, faltantes, duplicados), retornos simples y logarítmicos, **`rolling()`**, volatilidad rolling, Matplotlib.
 - **Clase 7:** `yfinance` con `auto_adjust=True`, retornos simples (entre activos) vs. log (en el tiempo), media ×252 y volatilidad ×√252, histogramas, **Jarque-Bera**, dividendos y retención, inflación (Fisher), media aritmética vs. geométrica, `linprog`, lambdas, sensibilidad.
 - **Clase 8:** covarianza, matriz Σ, `w @ Sigma @ w`, `minimize` con **SLSQP**, `LinearConstraint` (lb ≤ A·w ≤ ub), `Bounds`, separar igualdades y desigualdades, frontera eficiente, **Sharpe** (rf = 4%), máximo Sharpe, **utilidad −wᵀμ + λ·wᵀΣw**, penalización γ, `args` / closures / `partial`, **gradiente analítico `jac=`** y `check_grad`, grilla (λ, γ), fragilidad del óptimo, in-sample vs. out-of-sample, simulación con **Cholesky**, **Ledoit-Wolf** (`sklearn.covariance.LedoitWolf`), `trust-constr` para problemas grandes.
-- **Clases sin PDF todavía** (VaR 05/10, Monte Carlo 19/10, CAPM 26/10): usar versiones estándar simples. VaR paramétrico = z·σ (normal); VaR histórico = percentil de los retornos; VaR Monte Carlo = simulación con Cholesky; CVaR = promedio de las pérdidas peores que el VaR; beta = cov(r_p, r_m) / var(r_m); alfa de Jensen.
+- **Clase 9 (VaR):** `var_parametrico` = −(μ + z·σ) con `norm.ppf`; `var_historico` = `np.percentile(-r, 95)`; `cvar_historico` = promedio de los k peores días; CVaR normal con `norm.pdf`; backtesting del VaR con ventana móvil (`rolling(250)` + `shift(1)`), excepciones y rango de la binomial (`binom.ppf`, idea de Kupiec), semáforo de Basilea; EWMA (λ = 0,94, `ewm(alpha=1-λ, adjust=False)`).
+- **Clase 10 (Monte Carlo):** shocks "peso × movimiento" (si AAPL cae 10%), día real aplicado a la cartera (13/09/2022), `simular_gbm` (drift (μ − σ²/2)Δt, shock σ√Δt·Z), semilla fija, Z normal / t(4) reescalada / días reales (bootstrap), stress σ × 1,5, cartera con shocks correlacionados `Z @ L.T / σ` con `L = cholesky(Σ)`, VaR/CVaR de los caminos.
+- **CAPM (26/10, sin PDF):** beta = cov(r_p, r_m) / var(r_m); alfa de Jensen anual.
+- Las clases 9 y 10 están en la carpeta de David (texto extraído en la sesión de Claude de David).
 
 ## Diseño del análisis
 
@@ -66,7 +69,7 @@ Pedidos del profesor a lo largo de las consultas:
   - Referencias: **ACWI** (benchmark principal, acciones globales, se parece al universo), SPY (referencia), 1/N, y una cartera recomendada (pendiente: idealmente publicada por un ALyC o un diario a fines de 2022 / principios de 2023).
 - **Métricas** (para todas las carteras): volatilidad, VaR paramétrico/histórico/Monte Carlo, CVaR, drawdown máximo, volatilidad rolling, Sharpe, alfa y beta (CAPM contra ACWI), tracking error e information ratio contra ACWI, Sharpe separado por escenario del dólar.
 - **Métrica propia del pronóstico:** % de aciertos fuera de muestra (2023–2026).
-- **Stress tests:** Covid (feb–mar 2020) y 2022 (dólar muy fuerte).
+- **Stress tests (decidido el 09/11, siguiendo las clases 9 y 10):** A) históricos: Covid (20/02–23/03/2020), año 2022, 13/09/2022 y aranceles (03–08/04/2025); B) hipotéticos con peso × movimiento: "dólar disparado" calibrado con los 16 meses de 2015–2022 en que el DXY subió más de 2% (no con 2022, porque energía subió por la guerra) y "un sector cae 20%"; C) Monte Carlo estresado (normal, σ × 1,5, t(4), días reales) a 1 y 21 días. Se aplican a las carteras de hoy.
 
 ## Que funcione el día de la presentación
 
@@ -101,7 +104,8 @@ CLAUDE.md           este archivo
 - [x] Indicadores reales bajados de FRED el 09/11/2026 y subidos a `data/indicadores.csv` (01/2013 a 11/2026; el M2 llega hasta 09/2026 porque se publica con atraso).
 - [x] Lun 09/11: sección 7, `PronosticoDolar` (índice compuesto, correlaciones a 1/3/6 meses, aciertos, sensibilidad de la ventana, regla de confirmación). Parámetros nuevos en `CONFIG`: `medicion`, `signos`, `horizontes`, `ventanas_sensibilidad`.
 - [x] Lun 09/11: secciones 8 a 11. Clases `Escenarios` (meses de suba/baja del DXY), `Estimador` (μ y Σ anualizados por escenario, Σ vectorizada comprobada contra `np.cov` y Σ de Ledoit-Wolf), `Optimizador` (utilidad con λ, SLSQP, `jac`, topes, limpieza en dos pasadas), `Cartera` y `ConjuntoCarteras` (9 carteras, guardadas en `resultados/pesos_estimacion.csv` con datos hasta 2022 y `resultados/pesos_hoy.csv` con todos los datos). Recomendación de hoy en la sección 11. Optimizar las 18 carteras tarda ~1 min; con `recalcular = False` se cargan.
-- [ ] Secciones 12 a 14: backtest y métricas, stress test, conclusiones.
+- [x] Lun 09/11: secciones 12 (clases `CarteraDinamica`, `Backtest`, `Metricas`, `SimuladorMC`; tabla de métricas, crecimiento de USD 10.000, volatilidad rolling, Sharpe por escenario, VaR con 3 métodos, backtesting del VaR) y 13 (clase `StressTest`: A, B y C). Todo el notebook corre en ~8 s con las carteras guardadas.
+- [ ] Sección 14: conclusiones.
 - [ ] Mar 10/11 y Mié 11/11: folleto en PDF, presentación, ensayo y simulacro de preguntas.
 - [ ] Lun 16/11: presentación y entrega.
 
@@ -133,6 +137,16 @@ CLAUDE.md           este archivo
 - Σ: nuestra fórmula coincide con `np.cov` (diferencia 4e-19). Ledoit-Wolf encoge poco (0,02–0,04) pero baja el número de condición de ~70.000–135.000 a ~5.000–10.000.
 - Carteras (2015–2022): 16 a 31 acciones. Con dólar fuerte pesan consumo básico, financiero, industria e inmobiliario; con dólar débil, materiales, salud, financiero y energía, con más acciones de afuera (35–40% vs. 20–27%). Volatilidades esperadas: Conservador ~10–12%, Moderado ~13–17%, Agresivo ~18–26%. Los retornos "prometidos" con dólar débil son altísimos (in-sample: meses de baja del dólar fueron muy buenos para las acciones).
 - Recomendación de hoy (lectura 11/2026: índice +0,20, tendencia fuerte → dólar fuerte): Conservador 29 acciones (76% EE.UU.), Moderado 21 (92%), Agresivo 17 (98%); mucho consumo básico, industria y financiero.
+
+### Resultados del backtest y del stress (secciones 12 y 13, prueba 03/01/2023 a 02/11/2026, 962 días)
+
+- Retorno anual / Sharpe: **Moderado** sin señal 17,6% / 1,02; tendencia DXY 29,4% / 1,41; índice 20,3% / 1,02; índice + confirmación 21,9% / 1,12; oráculo 26,2% / 1,28. **Conservador**: sin señal 13,0% / 0,80 (la mejor del perfil); las dinámicas 10–13% / 0,53–0,73. **Agresivo**: sin señal 36,3% / 1,62 (mejor Sharpe); tendencia 40,3% / 1,56; índice + confirmación 35,4% / 1,48; índice 26,1% / 1,13. ACWI 19,1% / 1,02; SPY 20,9% / 1,08; 1/N 19,1% / 1,06.
+- Lectura: mirar el dólar ayudó en el perfil Moderado, no en el Conservador, y en el Agresivo subió el retorno pero no el Sharpe. El oráculo no siempre gana: el límite no es solo pronosticar el dólar sino que las carteras estimadas hasta 2022 sigan funcionando después.
+- Cambios de cartera en la prueba: tendencia 9, índice 8, índice + confirmación 15, oráculo 22.
+- VaR 95% a 1 día (Moderado sin señal): paramétrico 1,26%, histórico 1,18%, Monte Carlo 1,32%. Backtesting del VaR (ventana 250): los tres modelos dan "OK" en todas las estrategias probadas.
+- Stress A: en 2022 las carteras de dólar fuerte ganaron (Moderado +7,2%, Agresivo +8,0%) y las de dólar débil perdieron (−5,2% / −12,3%), contra ACWI −18,4%. En el Covid las de dólar débil fueron las que más cayeron (Moderado −38,7%). Aranceles 2025: −6% a −14%.
+- Stress B: un mes de dólar disparado (afuera −3,0%, materiales y energía −1,8%, resto −1,0%) cuesta −1,1% a −1,5% a las carteras de dólar fuerte y −1,8% a −2,1% a las de dólar débil.
+- Stress C (carteras de hoy, dólar fuerte, VaR 95% a 21 días): Conservador 5,4% normal → 8,0% con σ × 1,5; Moderado 6,5% → 9,7%; Agresivo 8,8% → 13,0%.
 
 ## Decisiones abiertas
 
