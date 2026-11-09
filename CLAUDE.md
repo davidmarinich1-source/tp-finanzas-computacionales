@@ -52,9 +52,8 @@ Pedidos del profesor a lo largo de las consultas:
 - **Universo:** todas las acciones actuales del S&P 500 (lista y sector GICS desde Wikipedia) + ~130 ADR de otros países de los 11 sectores (lista `ADRS` en el notebook). Se descartan las que no tienen precios desde enero de 2015, las que dejaron de cotizar y las que tienen más de 2% de días sin precio. Sesgo de supervivencia: mencionarlo como limitación.
 - **Período:** desde 2015. **Estimación hasta el 31/12/2022** (`CONFIG["corte"]`), **prueba fuera de muestra desde 2023**.
 - **Enfoque (definido el 09/11 con el profesor):** usar indicadores **anticipatorios** para pronosticar cada mes si el dólar (DXY) se va a fortalecer o debilitar el mes siguiente, y elegir la cartera óptima para ese escenario. No quedarse con un solo indicador, salvo que se demuestre que uno no suma nada.
-- **Indicadores (sección 6, clase `IndicadoresMacro`, FRED con `pd.read_csv(url)` como en la Clase 7):** 5 candidatos: tasa del Tesoro a 2 años (`DGS2`, signo +), M2 (`M2SL`, signo −), diferencial de tasas EE.UU. − Europa (`DFF` − `ECBDFR`, signo +, definido en `CONFIG["diferenciales"]`), tasa real a 10 años (`DFII10`, signo +) y curva 10a − 2a (`T10Y2Y`, signo −: si baja, aviso de recesión → dólar refugio). Todo mensual (fin de mes). El M2 se usa con 1 mes de atraso (`CONFIG["atrasos"]`). Si el archivo guardado no tiene algún indicador de `CONFIG`, `preparar()` los baja de nuevo. **Descartados por decisión del grupo/profesor:** VIX y balance de la Fed.
-- **Selección (decidida el 09/11):** el índice usa los 3 candidatos (`CONFIG["cantidad_indicadores"]`) con mayor correlación positiva con el cambio del DXY del mes siguiente, **solo con 2015–2022**. Criterio fijado antes de ver resultados. Se muestran ranking, correlación entre indicadores (redundancia) y los 5 en la prueba.
-- **Índice compuesto (sección 7, clase `PronosticoDolar`):** cambio de cada indicador en los últimos 3 meses (`CONFIG["ventana_indicadores"]`), estandarizado `(x − media) / desvío` con estadísticas de 2015–2022, con signo de la teoría (`CONFIG["signos"]`) y promediado entre los elegidos. Positivo = dólar fuerte el mes siguiente; negativo = débil. Base 1 solo para graficar DXY y M2 (no para la tasa: cerca de 0% distorsiona).
+- **Indicadores (sección 6, clase `IndicadoresMacro`, FRED con `pd.read_csv(url)` como en la Clase 7):** tasa del Tesoro a 2 años (`DGS2`) y M2 (`M2SL`). Todo mensual (fin de mes). El M2 se usa con 1 mes de atraso (`CONFIG["atrasos"]`) porque se publica unas 4 semanas después. **Descartados por decisión del grupo/profesor:** VIX y balance de la Fed.
+- **Índice compuesto (sección 7, clase `PronosticoDolar`):** cambio de cada indicador en los últimos 3 meses (`CONFIG["ventana_indicadores"]`), estandarizado `(x − media) / desvío` con estadísticas de 2015–2022, con signo de la teoría (tasa +, M2 −) y promediado. Positivo = dólar fuerte el mes siguiente; negativo = débil. Base 1 solo para graficar DXY y M2 (no para la tasa: cerca de 0% distorsiona).
 - **Validación del pronóstico (2015–2022):** correlación con el cambio del DXY a 1, 3 y 6 meses; % de aciertos de tasa sola, M2 solo, índice combinado, tendencia del propio DXY y azar (50%). Sensibilidad de la ventana (1, 3, 6 meses). Elegir todo solo con 2015–2022.
 - **Regla de confirmación:** si el índice y la tendencia del DXY (señal de 200 días, `SenalDolar`, sección 4) coinciden, cartera de ese escenario; si no, cartera "sin señal".
 - **Escenarios de estimación:** (1) sin considerar el dólar (todos los meses), (2) meses en que el DXY subió, (3) meses en que bajó. μ y Σ se estiman con los días de esos meses; Σ con Ledoit-Wolf (con ~600 acciones la Σ muestral tiene mucho ruido).
@@ -101,8 +100,6 @@ CLAUDE.md           este archivo
 - [x] Lun 09/11: configuración de indicadores y sección 6 (`IndicadoresMacro`: descarga de FRED de tasa a 2 años y M2).
 - [x] Indicadores reales bajados de FRED el 09/11/2026 y subidos a `data/indicadores.csv` (01/2013 a 11/2026; el M2 llega hasta 09/2026 porque se publica con atraso).
 - [x] Lun 09/11: sección 7, `PronosticoDolar` (índice compuesto, correlaciones a 1/3/6 meses, aciertos, sensibilidad de la ventana, regla de confirmación). Parámetros nuevos en `CONFIG`: `medicion`, `signos`, `horizontes`, `ventanas_sensibilidad`.
-- [x] Lun 09/11: 5 indicadores candidatos (se sumaron diferencial EE.UU. − Europa, tasa real a 10 años y curva) y selección automática de los 3 mejores (ranking y correlación entre indicadores en la sección 7).
-- [x] Los 6 series reales de FRED (5 indicadores) bajadas el 09/11/2026 y subidas a `data/indicadores.csv`.
 - [ ] Secciones 8 a 11: escenarios, μ y Σ, optimizador y carteras, recomendación de hoy.
 - [ ] Secciones 12 a 14: backtest y métricas, stress test, conclusiones.
 - [ ] Mar 10/11 y Mié 11/11: folleto en PDF, presentación, ensayo y simulacro de preguntas.
@@ -114,15 +111,7 @@ CLAUDE.md           este archivo
 - Retorno medio anual con dólar fuerte vs. débil: EE.UU. 12,7% vs. 21,4% (−8,6 pp); ADR 6,1% vs. 21,7% (−15,7 pp). Las acciones de afuera son más sensibles al dólar.
 - Sectores más sensibles: materiales (−19,9 pp), comunicación (−16,2), tecnología y financiero (−14,9). Menos sensibles: consumo básico (0) y servicios públicos (+1,8).
 
-### Resultados con los 5 candidatos (sección 7, datos reales, 09/11)
-
-- Ranking por correlación con el DXY del mes siguiente (2015–2022): M2 +0,19, diferencial EE.UU. − Europa +0,17, tasa a 2 años +0,07, curva +0,07, tasa real a 10 años −0,02 (queda afuera: va en contra de la teoría a 1 mes). **Elegidos: M2, diferencial y tasa a 2 años.**
-- Redundancia: tasa a 2 años y tasa real a 10 años se parecen mucho (+0,76); tasa a 2 años y diferencial, +0,54.
-- Índice de los 3: correlación +0,18 (1 mes), +0,32 (3), +0,38 (6). Aciertos a 1 mes: 49% en 2015–2022 y 53% en la prueba (con solo tasa + M2 eran 54% y 56%). Más correlación, pero no más aciertos de dirección.
-- Confirmación: 52% (estimación) y 57% (prueba) cuando toma posición; neutral en ~40% de los meses.
-- Lectura más reciente: índice levemente positivo, tendencia fuerte → "fuerte".
-
-### Resultados anteriores (solo tasa a 2 años y M2)
+### Resultados del pronóstico (sección 7, datos reales)
 
 - Correlación con el DXY de los meses siguientes (2015–2022): tasa a 2 años +0,07 (1 mes), +0,26 (3), +0,48 (6); M2 +0,19 / +0,20 / +0,22; índice combinado +0,16 / +0,29 / +0,45. Signos según la teoría; la señal es más fuerte a 3–6 meses que a 1 mes (ojo: ventanas superpuestas inflan las correlaciones largas).
 - Aciertos a 1 mes en 2015–2022: tasa 56%, M2 55%, índice 54%, tendencia DXY 53%, decir siempre "fuerte" 56%. En 2023 en adelante: índice 56%, tendencia 56%, M2 47%, siempre "fuerte" 47%.
@@ -130,6 +119,12 @@ CLAUDE.md           este archivo
 - Confirmación: acierta 55% (estimación) y 58% (prueba) en los meses en que toma posición.
 - Lectura: el poder de anticipación a 1 mes es débil (cerca de "siempre fuerte"); mejor a 3–6 meses. Es una conclusión válida para el TP. El valor real se mide en el backtest de carteras.
 - Lectura más reciente (fin de 10/2026 y 11/2026 parcial): índice positivo, tendencia fuerte → decisión "fuerte".
+
+### Indicadores probados y descartados (09/11)
+
+- Se probaron 5 candidatos: tasa a 2 años, M2, diferencial EE.UU. − Europa (`DFF` − `ECBDFR`), tasa real a 10 años (`DFII10`) y curva 10a − 2a (`T10Y2Y`), eligiendo los 3 con mayor correlación con el DXY del mes siguiente (2015–2022). Quedaron M2, diferencial y tasa a 2 años; la tasa real se descartó por ir en contra de la teoría a 1 mes.
+- El índice de 3 subió la correlación (+0,18 a 1 mes, +0,32 a 3) pero bajó los aciertos de dirección (49% en 2015–2022, 53% en la prueba, contra 54% y 56% con tasa + M2). **El grupo decidió volver a tasa a 2 años + M2.** La versión con 5 candidatos queda en el historial de GitHub (commits `c00d604` y `6c3c0f3`) por si se quiere recuperar.
+- La tendencia del DXY (200 días) se deja afuera del índice a propósito: el índice mide causas (anticipatorias) y la tendencia es el propio dólar (reactiva); se usa como confirmación y como referencia en la tabla de aciertos.
 
 ## Decisiones abiertas
 
