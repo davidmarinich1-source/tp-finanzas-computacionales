@@ -10,5 +10,4 @@ Acá van los datos que genera el notebook con `CONFIG["descargar"] = True` (ver 
 | `referencias.csv` | Precios de SPY y ACWI |
 | `descartados.csv` | Acciones que se sacaron y el motivo |
 | `info.json` | Fecha de descarga y cantidad de acciones |
-
-**Todavía no hay datos:** hay que generarlos una vez desde Colab y subirlos acá.
+| `indicadores.csv` | Tasa del Tesoro a 2 años (DGS2) y M2 (M2SL) de FRED, a fin de cada mes |

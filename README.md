@@ -31,6 +31,8 @@ Se hace una vez (y opcionalmente antes de la entrega, para tener datos hasta la 
 5. En GitHub, entrar a la carpeta **`data/`** del repositorio → `Add file → Upload files` → arrastrar **todos** los archivos descomprimidos → `Commit changes`.
 6. Volver a poner `"descargar": False` en el notebook. Desde ahora todos usan esos datos.
 
+**Indicadores (tasa a 2 años y M2, de FRED):** se actualizan aparte, en segundos. Poner `"descargar_indicadores": True`, ejecutar, y en la sección 6 Colab baja `indicadores.csv`: subirlo a la carpeta `data/` del repositorio y volver a poner `False`. Si el archivo no está en el repositorio, el notebook los baja solo de FRED.
+
 ## Estructura
 
 | Carpeta / archivo | Contenido |
@@ -46,3 +48,4 @@ Se hace una vez (y opcionalmente antes de la entrega, para tener datos hasta la 
 - Precios ajustados por dividendos: Yahoo Finance (librería `yfinance`).
 - Lista del S&P 500 y sectores GICS: Wikipedia, *List of S&P 500 companies*.
 - Fortaleza del dólar: índice DXY (`DX-Y.NYB` en Yahoo Finance).
+- Indicadores anticipatorios: FRED (Reserva Federal de St. Louis): tasa del Tesoro a 2 años (`DGS2`) y M2 (`M2SL`).

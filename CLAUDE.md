@@ -51,16 +51,22 @@ Pedidos del profesor a lo largo de las consultas:
 
 - **Universo:** todas las acciones actuales del S&P 500 (lista y sector GICS desde Wikipedia) + ~130 ADR de otros países de los 11 sectores (lista `ADRS` en el notebook). Se descartan las que no tienen precios desde enero de 2015, las que dejaron de cotizar y las que tienen más de 2% de días sin precio. Sesgo de supervivencia: mencionarlo como limitación.
 - **Período:** desde 2015. **Estimación hasta el 31/12/2022** (`CONFIG["corte"]`), **prueba fuera de muestra desde 2023**.
-- **Señal del dólar:** índice DXY (`DX-Y.NYB`). Dólar **fuerte** si está por encima de su promedio móvil de 200 días; **débil** si está por debajo. Se usa la señal del día anterior (`shift(1)`) para no mirar el futuro.
-- **Escenarios de estimación:** (1) sin considerar el dólar (todos los días), (2) solo días de dólar fuerte, (3) solo días de dólar débil. μ y Σ se estiman con los días de cada escenario; Σ con Ledoit-Wolf (con ~600 acciones la Σ muestral tiene mucho ruido).
-- **Perfiles:** Conservador, Moderado y Agresivo = función de utilidad de la Clase 8 con λ distinto (`CONFIG["lambdas"]`, a calibrar para que las volatilidades queden razonables).
+- **Enfoque (definido el 09/11 con el profesor):** usar indicadores **anticipatorios** para pronosticar cada mes si el dólar (DXY) se va a fortalecer o debilitar el mes siguiente, y elegir la cartera óptima para ese escenario. No quedarse con un solo indicador, salvo que se demuestre que uno no suma nada.
+- **Indicadores (sección 6, clase `IndicadoresMacro`, FRED con `pd.read_csv(url)` como en la Clase 7):** tasa del Tesoro a 2 años (`DGS2`) y M2 (`M2SL`). Todo mensual (fin de mes). El M2 se usa con 1 mes de atraso (`CONFIG["atrasos"]`) porque se publica unas 4 semanas después. **Descartados por decisión del grupo/profesor:** VIX y balance de la Fed.
+- **Índice compuesto (próximo paso, clase `PronosticoDolar`):** cambio de cada indicador en los últimos 3 meses (`CONFIG["ventana_indicadores"]`), estandarizado `(x − media) / desvío` con estadísticas de 2015–2022, con signo de la teoría (tasa +, M2 −) y promediado. Positivo = dólar fuerte el mes siguiente; negativo = débil. Base 1 solo para graficar DXY y M2 (no para la tasa: cerca de 0% distorsiona).
+- **Validación del pronóstico (2015–2022):** correlación con el cambio del DXY a 1, 3 y 6 meses; % de aciertos de tasa sola, M2 solo, índice combinado, tendencia del propio DXY y azar (50%). Sensibilidad de la ventana (1, 3, 6 meses). Elegir todo solo con 2015–2022.
+- **Regla de confirmación:** si el índice y la tendencia del DXY (señal de 200 días, `SenalDolar`, sección 4) coinciden, cartera de ese escenario; si no, cartera "sin señal".
+- **Escenarios de estimación:** (1) sin considerar el dólar (todos los meses), (2) meses en que el DXY subió, (3) meses en que bajó. μ y Σ se estiman con los días de esos meses; Σ con Ledoit-Wolf (con ~600 acciones la Σ muestral tiene mucho ruido).
+- **Recomendación de hoy:** leer el índice con los últimos datos → escenario esperado para el mes siguiente → cartera recomendada por perfil (va al folleto). No se hace proyección a 12 meses con Monte Carlo (decisión del grupo); Monte Carlo se usa solo para el VaR.
+- **Perfiles:** Conservador, Moderado y Agresivo = función de utilidad de la Clase 8 con λ = 50, 10 y 3 (`CONFIG["lambdas"]`). En una prueba con datos reales dieron volatilidades esperadas de ~11%, ~14% y ~20%; SLSQP con 580 acciones tarda 2–9 s por cartera.
 - **Restricciones:** sin ventas en corto, máximo 8% por acción, máximo 25% por sector, suma = 1. Después de optimizar, los pesos menores a 1% se eliminan y se reescala.
 - **Carteras:**
   - 9 optimizadas: 3 perfiles × 3 escenarios (sin dólar / fuerte / débil). Las "sin dólar" son la comparación principal.
-  - 3 dinámicas (una por perfil): miran la señal y usan la cartera de dólar fuerte o débil La señal se revisa **una vez por mes** (con datos reales cambia entre 1 y 25 veces por año; revisarla a diario haría rotar de más).
+  - Estrategias del backtest (por perfil, revisión **mensual**): sin señal, solo tendencia del DXY (reactiva), índice combinado, índice + confirmación, y "oráculo" (sabiendo qué hizo el dólar; techo teórico, no implementable).
   - Referencias: **ACWI** (benchmark principal, acciones globales, se parece al universo), SPY (referencia), 1/N, y una cartera recomendada (pendiente: idealmente publicada por un ALyC o un diario a fines de 2022 / principios de 2023).
 - **Métricas** (para todas las carteras): volatilidad, VaR paramétrico/histórico/Monte Carlo, CVaR, drawdown máximo, volatilidad rolling, Sharpe, alfa y beta (CAPM contra ACWI), tracking error e information ratio contra ACWI, Sharpe separado por escenario del dólar.
-- **Stress tests:** Covid (feb–mar 2020), 2022 (dólar muy fuerte), escenario hipotético "dólar +10%" (beta de cada acción contra el DXY), Monte Carlo con la Σ de cada escenario.
+- **Métrica propia del pronóstico:** % de aciertos fuera de muestra (2023–2026).
+- **Stress tests:** Covid (feb–mar 2020) y 2022 (dólar muy fuerte).
 
 ## Que funcione el día de la presentación
 
@@ -74,7 +80,7 @@ Pedidos del profesor a lo largo de las consultas:
 
 ```
 TP_HomeBias.ipynb   notebook único del trabajo (se abre en Colab)
-data/               datos descargados (precios, universo, dólar, referencias)
+data/               datos descargados (precios, universo, dólar, referencias, indicadores)
 resultados/         (próximamente) pesos de las carteras y tablas de métricas
 folleto/            (próximamente) folleto en PDF y gráficos
 README.md           cómo correrlo y cómo actualizar los datos
@@ -91,13 +97,13 @@ CLAUDE.md           este archivo
 - [x] Repo, `CLAUDE.md`, `README.md`.
 - [x] Secciones 0 a 5 del notebook: configuración, universo, `DatosMercado`, resumen, `SenalDolar`, primera mirada por sector.
 - [x] Datos reales generados el 02/11/2026 y subidos a `data/`: 580 acciones (457 S&P 500 + 123 ADR), 02/01/2015 a 02/11/2026, 50 descartadas.
-- [ ] Lun 02/11: sección 6 y 7 (μ y Σ por escenario, optimizador, 12 carteras).
-- [ ] Mar 03/11: sección 8 (métricas).
-- [ ] Mié 04/11: sección 9 (backtest, CAPM, tracking error, information ratio).
-- [ ] Lun 09/11: sección 10 (stress tests) y conclusiones.
-- [ ] Mar 10/11: folleto en PDF.
-- [ ] Mié 11/11: presentación, ensayo y simulacro de preguntas.
-- [ ] Lun 16/11: presentación.
+- [x] Lun 09/11: configuración de indicadores y sección 6 (`IndicadoresMacro`: descarga de FRED de tasa a 2 años y M2).
+- [ ] **Bajar los indicadores reales en Colab y subir `data/indicadores.csv`** (pendiente de los integrantes; si el archivo no está, el notebook los baja solo de FRED).
+- [ ] Sección 7: `PronosticoDolar` (índice compuesto, validación, confirmación).
+- [ ] Secciones 8 a 11: escenarios, μ y Σ, optimizador y carteras, recomendación de hoy.
+- [ ] Secciones 12 a 14: backtest y métricas, stress test, conclusiones.
+- [ ] Mar 10/11 y Mié 11/11: folleto en PDF, presentación, ensayo y simulacro de preguntas.
+- [ ] Lun 16/11: presentación y entrega.
 
 ## Hallazgos hasta ahora (datos reales)
 
@@ -108,4 +114,4 @@ CLAUDE.md           este archivo
 ## Decisiones abiertas
 
 - Cartera recomendada para el backtest: falta definir cuál.
-- Valores de λ de cada perfil: calibrar cuando estén las carteras.
+- Repaso del código con David: llegaron hasta la parte 4c (descarga en `DatosMercado`); sigue la 4d (filtro).
