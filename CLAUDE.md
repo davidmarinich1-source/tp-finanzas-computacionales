@@ -102,7 +102,7 @@ CLAUDE.md           este archivo
 - [x] Indicadores reales bajados de FRED el 09/11/2026 y subidos a `data/indicadores.csv` (01/2013 a 11/2026; el M2 llega hasta 09/2026 porque se publica con atraso).
 - [x] Lun 09/11: sección 7, `PronosticoDolar` (índice compuesto, correlaciones a 1/3/6 meses, aciertos, sensibilidad de la ventana, regla de confirmación). Parámetros nuevos en `CONFIG`: `medicion`, `signos`, `horizontes`, `ventanas_sensibilidad`.
 - [x] Lun 09/11: 5 indicadores candidatos (se sumaron diferencial EE.UU. − Europa, tasa real a 10 años y curva) y selección automática de los 3 mejores (ranking y correlación entre indicadores en la sección 7).
-- [ ] **Bajar los 5 indicadores reales en Colab y subir el `data/indicadores.csv` nuevo** (pendiente de los integrantes: el archivo actual solo tiene tasa a 2 años y M2; los resultados de abajo son con esos dos).
+- [x] Los 6 series reales de FRED (5 indicadores) bajadas el 09/11/2026 y subidas a `data/indicadores.csv`.
 - [ ] Secciones 8 a 11: escenarios, μ y Σ, optimizador y carteras, recomendación de hoy.
 - [ ] Secciones 12 a 14: backtest y métricas, stress test, conclusiones.
 - [ ] Mar 10/11 y Mié 11/11: folleto en PDF, presentación, ensayo y simulacro de preguntas.
@@ -114,7 +114,15 @@ CLAUDE.md           este archivo
 - Retorno medio anual con dólar fuerte vs. débil: EE.UU. 12,7% vs. 21,4% (−8,6 pp); ADR 6,1% vs. 21,7% (−15,7 pp). Las acciones de afuera son más sensibles al dólar.
 - Sectores más sensibles: materiales (−19,9 pp), comunicación (−16,2), tecnología y financiero (−14,9). Menos sensibles: consumo básico (0) y servicios públicos (+1,8).
 
-### Resultados del pronóstico (sección 7, datos reales, solo con tasa a 2 años y M2; actualizar con los 5)
+### Resultados con los 5 candidatos (sección 7, datos reales, 09/11)
+
+- Ranking por correlación con el DXY del mes siguiente (2015–2022): M2 +0,19, diferencial EE.UU. − Europa +0,17, tasa a 2 años +0,07, curva +0,07, tasa real a 10 años −0,02 (queda afuera: va en contra de la teoría a 1 mes). **Elegidos: M2, diferencial y tasa a 2 años.**
+- Redundancia: tasa a 2 años y tasa real a 10 años se parecen mucho (+0,76); tasa a 2 años y diferencial, +0,54.
+- Índice de los 3: correlación +0,18 (1 mes), +0,32 (3), +0,38 (6). Aciertos a 1 mes: 49% en 2015–2022 y 53% en la prueba (con solo tasa + M2 eran 54% y 56%). Más correlación, pero no más aciertos de dirección.
+- Confirmación: 52% (estimación) y 57% (prueba) cuando toma posición; neutral en ~40% de los meses.
+- Lectura más reciente: índice levemente positivo, tendencia fuerte → "fuerte".
+
+### Resultados anteriores (solo tasa a 2 años y M2)
 
 - Correlación con el DXY de los meses siguientes (2015–2022): tasa a 2 años +0,07 (1 mes), +0,26 (3), +0,48 (6); M2 +0,19 / +0,20 / +0,22; índice combinado +0,16 / +0,29 / +0,45. Signos según la teoría; la señal es más fuerte a 3–6 meses que a 1 mes (ojo: ventanas superpuestas inflan las correlaciones largas).
 - Aciertos a 1 mes en 2015–2022: tasa 56%, M2 55%, índice 54%, tendencia DXY 53%, decir siempre "fuerte" 56%. En 2023 en adelante: índice 56%, tendencia 56%, M2 47%, siempre "fuerte" 47%.
