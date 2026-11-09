@@ -66,7 +66,7 @@ Pedidos del profesor a lo largo de las consultas:
 - **Carteras:**
   - 9 optimizadas: 3 perfiles × 3 escenarios (sin dólar / fuerte / débil). Las "sin dólar" son la comparación principal.
   - Estrategias del backtest (por perfil, revisión **mensual**): sin señal, solo tendencia del DXY (reactiva), índice combinado, índice + confirmación, y "oráculo" (sabiendo qué hizo el dólar; techo teórico, no implementable).
-  - Referencias: **ACWI** (benchmark principal, acciones globales, se parece al universo), SPY (referencia), 1/N, y una cartera recomendada (pendiente: idealmente publicada por un ALyC o un diario a fines de 2022 / principios de 2023).
+  - Referencias: **ACWI** (benchmark principal, acciones globales, se parece al universo), SPY (referencia), 1/N y dos **carteras recomendadas** publicadas antes de la prueba, en partes iguales (`CONFIG["carteras_recomendadas"]`): PPI conservadora (Bloomberg Línea, 06/12/2022: KO, WMT, PFE, JPM, XOM, JNJ, PG, VZ) y Citi "10 CEDEARs para 2023" (El Cronista, 28/12/2022: META, PYPL, TSLA, AMD, NFLX, CRM, INTC, AMZN, MU, EW; PYPL no está en el universo, se usan 9).
 - **Métricas** (para todas las carteras): volatilidad, VaR paramétrico/histórico/Monte Carlo, CVaR, drawdown máximo, volatilidad rolling, Sharpe, alfa y beta (CAPM contra ACWI), tracking error e information ratio contra ACWI, Sharpe separado por escenario del dólar.
 - **Métrica propia del pronóstico:** % de aciertos fuera de muestra (2023–2026).
 - **Stress tests (decidido el 09/11, siguiendo las clases 9 y 10):** A) históricos: Covid (20/02–23/03/2020), año 2022, 13/09/2022 y aranceles (03–08/04/2025); B) hipotéticos con peso × movimiento: "dólar disparado" calibrado con los 16 meses de 2015–2022 en que el DXY subió más de 2% (no con 2022, porque energía subió por la guerra) y "un sector cae 20%"; C) Monte Carlo estresado (normal, σ × 1,5, t(4), días reales) a 1 y 21 días. Se aplican a las carteras de hoy.
@@ -105,7 +105,7 @@ CLAUDE.md           este archivo
 - [x] Lun 09/11: sección 7, `PronosticoDolar` (índice compuesto, correlaciones a 1/3/6 meses, aciertos, sensibilidad de la ventana, regla de confirmación). Parámetros nuevos en `CONFIG`: `medicion`, `signos`, `horizontes`, `ventanas_sensibilidad`.
 - [x] Lun 09/11: secciones 8 a 11. Clases `Escenarios` (meses de suba/baja del DXY), `Estimador` (μ y Σ anualizados por escenario, Σ vectorizada comprobada contra `np.cov` y Σ de Ledoit-Wolf), `Optimizador` (utilidad con λ, SLSQP, `jac`, topes, limpieza en dos pasadas), `Cartera` y `ConjuntoCarteras` (9 carteras, guardadas en `resultados/pesos_estimacion.csv` con datos hasta 2022 y `resultados/pesos_hoy.csv` con todos los datos). Recomendación de hoy en la sección 11. Optimizar las 18 carteras tarda ~1 min; con `recalcular = False` se cargan.
 - [x] Lun 09/11: secciones 12 (clases `CarteraDinamica`, `Backtest`, `Metricas`, `SimuladorMC`; tabla de métricas, crecimiento de USD 10.000, volatilidad rolling, Sharpe por escenario, VaR con 3 métodos, backtesting del VaR) y 13 (clase `StressTest`: A, B y C). Todo el notebook corre en ~8 s con las carteras guardadas.
-- [ ] Sección 14: conclusiones.
+- [x] Lun 09/11: carteras recomendadas en el backtest y sección 14 (tabla resumen por perfil calculada + conclusiones, limitaciones y mejoras). El notebook está completo (101 celdas).
 - [ ] Mar 10/11 y Mié 11/11: folleto en PDF, presentación, ensayo y simulacro de preguntas.
 - [ ] Lun 16/11: presentación y entrega.
 
@@ -147,8 +147,8 @@ CLAUDE.md           este archivo
 - Stress A: en 2022 las carteras de dólar fuerte ganaron (Moderado +7,2%, Agresivo +8,0%) y las de dólar débil perdieron (−5,2% / −12,3%), contra ACWI −18,4%. En el Covid las de dólar débil fueron las que más cayeron (Moderado −38,7%). Aranceles 2025: −6% a −14%.
 - Stress B: un mes de dólar disparado (afuera −3,0%, materiales y energía −1,8%, resto −1,0%) cuesta −1,1% a −1,5% a las carteras de dólar fuerte y −1,8% a −2,1% a las de dólar débil.
 - Stress C (carteras de hoy, dólar fuerte, VaR 95% a 21 días): Conservador 5,4% normal → 8,0% con σ × 1,5; Moderado 6,5% → 9,7%; Agresivo 8,8% → 13,0%.
+- Carteras recomendadas en la prueba: PPI 15,8% anual / Sharpe 0,98 / caída −10,5% (le ganó a nuestro Conservador); Citi 48,5% / 1,42 / caída −27,3%, volatilidad 27,7% (nuestro Agresivo sin señal tuvo mejor Sharpe).
 
 ## Decisiones abiertas
 
-- Cartera recomendada para el backtest: falta definir cuál.
 - Repaso del código con David: llegaron hasta la parte 4c (descarga en `DatosMercado`); sigue la 4d (filtro).
