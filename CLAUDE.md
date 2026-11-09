@@ -53,7 +53,7 @@ Pedidos del profesor a lo largo de las consultas:
 - **Período:** desde 2015. **Estimación hasta el 31/12/2022** (`CONFIG["corte"]`), **prueba fuera de muestra desde 2023**.
 - **Enfoque (definido el 09/11 con el profesor):** usar indicadores **anticipatorios** para pronosticar cada mes si el dólar (DXY) se va a fortalecer o debilitar el mes siguiente, y elegir la cartera óptima para ese escenario. No quedarse con un solo indicador, salvo que se demuestre que uno no suma nada.
 - **Indicadores (sección 6, clase `IndicadoresMacro`, FRED con `pd.read_csv(url)` como en la Clase 7):** tasa del Tesoro a 2 años (`DGS2`) y M2 (`M2SL`). Todo mensual (fin de mes). El M2 se usa con 1 mes de atraso (`CONFIG["atrasos"]`) porque se publica unas 4 semanas después. **Descartados por decisión del grupo/profesor:** VIX y balance de la Fed.
-- **Índice compuesto (próximo paso, clase `PronosticoDolar`):** cambio de cada indicador en los últimos 3 meses (`CONFIG["ventana_indicadores"]`), estandarizado `(x − media) / desvío` con estadísticas de 2015–2022, con signo de la teoría (tasa +, M2 −) y promediado. Positivo = dólar fuerte el mes siguiente; negativo = débil. Base 1 solo para graficar DXY y M2 (no para la tasa: cerca de 0% distorsiona).
+- **Índice compuesto (sección 7, clase `PronosticoDolar`):** cambio de cada indicador en los últimos 3 meses (`CONFIG["ventana_indicadores"]`), estandarizado `(x − media) / desvío` con estadísticas de 2015–2022, con signo de la teoría (tasa +, M2 −) y promediado. Positivo = dólar fuerte el mes siguiente; negativo = débil. Base 1 solo para graficar DXY y M2 (no para la tasa: cerca de 0% distorsiona).
 - **Validación del pronóstico (2015–2022):** correlación con el cambio del DXY a 1, 3 y 6 meses; % de aciertos de tasa sola, M2 solo, índice combinado, tendencia del propio DXY y azar (50%). Sensibilidad de la ventana (1, 3, 6 meses). Elegir todo solo con 2015–2022.
 - **Regla de confirmación:** si el índice y la tendencia del DXY (señal de 200 días, `SenalDolar`, sección 4) coinciden, cartera de ese escenario; si no, cartera "sin señal".
 - **Escenarios de estimación:** (1) sin considerar el dólar (todos los meses), (2) meses en que el DXY subió, (3) meses en que bajó. μ y Σ se estiman con los días de esos meses; Σ con Ledoit-Wolf (con ~600 acciones la Σ muestral tiene mucho ruido).
@@ -99,7 +99,7 @@ CLAUDE.md           este archivo
 - [x] Datos reales generados el 02/11/2026 y subidos a `data/`: 580 acciones (457 S&P 500 + 123 ADR), 02/01/2015 a 02/11/2026, 50 descartadas.
 - [x] Lun 09/11: configuración de indicadores y sección 6 (`IndicadoresMacro`: descarga de FRED de tasa a 2 años y M2).
 - [x] Indicadores reales bajados de FRED el 09/11/2026 y subidos a `data/indicadores.csv` (01/2013 a 11/2026; el M2 llega hasta 09/2026 porque se publica con atraso).
-- [ ] Sección 7: `PronosticoDolar` (índice compuesto, validación, confirmación).
+- [x] Lun 09/11: sección 7, `PronosticoDolar` (índice compuesto, correlaciones a 1/3/6 meses, aciertos, sensibilidad de la ventana, regla de confirmación). Parámetros nuevos en `CONFIG`: `medicion`, `signos`, `horizontes`, `ventanas_sensibilidad`.
 - [ ] Secciones 8 a 11: escenarios, μ y Σ, optimizador y carteras, recomendación de hoy.
 - [ ] Secciones 12 a 14: backtest y métricas, stress test, conclusiones.
 - [ ] Mar 10/11 y Mié 11/11: folleto en PDF, presentación, ensayo y simulacro de preguntas.
@@ -110,6 +110,15 @@ CLAUDE.md           este archivo
 - Período de estimación (2015–2022): 1.282 días de dólar fuerte y 732 de dólar débil.
 - Retorno medio anual con dólar fuerte vs. débil: EE.UU. 12,7% vs. 21,4% (−8,6 pp); ADR 6,1% vs. 21,7% (−15,7 pp). Las acciones de afuera son más sensibles al dólar.
 - Sectores más sensibles: materiales (−19,9 pp), comunicación (−16,2), tecnología y financiero (−14,9). Menos sensibles: consumo básico (0) y servicios públicos (+1,8).
+
+### Resultados del pronóstico (sección 7, datos reales)
+
+- Correlación con el DXY de los meses siguientes (2015–2022): tasa a 2 años +0,07 (1 mes), +0,26 (3), +0,48 (6); M2 +0,19 / +0,20 / +0,22; índice combinado +0,16 / +0,29 / +0,45. Signos según la teoría; la señal es más fuerte a 3–6 meses que a 1 mes (ojo: ventanas superpuestas inflan las correlaciones largas).
+- Aciertos a 1 mes en 2015–2022: tasa 56%, M2 55%, índice 54%, tendencia DXY 53%, decir siempre "fuerte" 56%. En 2023 en adelante: índice 56%, tendencia 56%, M2 47%, siempre "fuerte" 47%.
+- Ventana: 1 mes 55% / 3 meses 54% / 6 meses 49% (estimación). Se mantiene 3.
+- Confirmación: acierta 55% (estimación) y 58% (prueba) en los meses en que toma posición.
+- Lectura: el poder de anticipación a 1 mes es débil (cerca de "siempre fuerte"); mejor a 3–6 meses. Es una conclusión válida para el TP. El valor real se mide en el backtest de carteras.
+- Lectura más reciente (fin de 10/2026 y 11/2026 parcial): índice positivo, tendencia fuerte → decisión "fuerte".
 
 ## Decisiones abiertas
 
