@@ -106,7 +106,8 @@ CLAUDE.md           este archivo
 - [x] Lun 09/11: secciones 8 a 11. Clases `Escenarios` (meses de suba/baja del DXY), `Estimador` (μ y Σ anualizados por escenario, Σ vectorizada comprobada contra `np.cov` y Σ de Ledoit-Wolf), `Optimizador` (utilidad con λ, SLSQP, `jac`, topes, limpieza en dos pasadas), `Cartera` y `ConjuntoCarteras` (9 carteras, guardadas en `resultados/pesos_estimacion.csv` con datos hasta 2022 y `resultados/pesos_hoy.csv` con todos los datos). Recomendación de hoy en la sección 11. Optimizar las 18 carteras tarda ~1 min; con `recalcular = False` se cargan.
 - [x] Lun 09/11: secciones 12 (clases `CarteraDinamica`, `Backtest`, `Metricas`, `SimuladorMC`; tabla de métricas, crecimiento de USD 10.000, volatilidad rolling, Sharpe por escenario, VaR con 3 métodos, backtesting del VaR) y 13 (clase `StressTest`: A, B y C). Todo el notebook corre en ~8 s con las carteras guardadas.
 - [x] Lun 09/11: carteras recomendadas en el backtest y sección 14 (tabla resumen por perfil calculada + conclusiones, limitaciones y mejoras). El notebook está completo (101 celdas).
-- [ ] Mar 10/11 y Mié 11/11: folleto en PDF, presentación, ensayo y simulacro de preguntas.
+- [x] Lun 09/11: primera versión del folleto (3 páginas carta, artifact de diseño de Claude "Folleto – Carteras según el dólar", se exporta a PDF) y de la presentación (15 diapositivas con notas del orador, artifact "Presentación – Carteras según el dólar", se exporta a PowerPoint o PDF). Los dos están en la cuenta de Claude de David; para que el compañero los vea hay que compartirlos desde el menú Compartir. Cuando estén aprobados, exportar el folleto a PDF y subirlo a `folleto/`.
+- [ ] Mar 10/11 y Mié 11/11: revisar folleto y presentación, ensayo y simulacro de preguntas.
 - [ ] Lun 16/11: presentación y entrega.
 
 ## Hallazgos hasta ahora (datos reales)
