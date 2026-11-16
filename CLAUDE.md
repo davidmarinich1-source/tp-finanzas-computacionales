@@ -105,7 +105,7 @@ CLAUDE.md           este archivo
 - [x] Lun 09/11: sección 7, `PronosticoDolar` (índice compuesto, correlaciones a 1/3/6 meses, aciertos, sensibilidad de la ventana, regla de confirmación). Parámetros nuevos en `CONFIG`: `medicion`, `signos`, `horizontes`, `ventanas_sensibilidad`.
 - [x] Lun 09/11: secciones 8 a 11. Clases `Escenarios` (meses de suba/baja del DXY), `Estimador` (μ y Σ anualizados por escenario, Σ vectorizada comprobada contra `np.cov` y Σ de Ledoit-Wolf), `Optimizador` (utilidad con λ, SLSQP, `jac`, topes, limpieza en dos pasadas), `Cartera` y `ConjuntoCarteras` (9 carteras, guardadas en `resultados/pesos_estimacion.csv` con datos hasta 2022 y `resultados/pesos_hoy.csv` con todos los datos). Recomendación de hoy en la sección 11. Optimizar las 18 carteras tarda ~1 min; con `recalcular = False` se cargan.
 - [x] Lun 09/11: secciones 12 (clases `CarteraDinamica`, `Backtest`, `Metricas`, `SimuladorMC`; tabla de métricas, crecimiento de USD 10.000, volatilidad rolling, Sharpe por escenario, VaR con 3 métodos, backtesting del VaR) y 13 (clase `StressTest`: A, B y C). Todo el notebook corre en ~8 s con las carteras guardadas.
-- [x] Lun 09/11: carteras recomendadas en el backtest y sección 14 (tabla resumen por perfil calculada + conclusiones, limitaciones y mejoras). El notebook está completo (104 celdas desde el 16/11).
+- [x] Lun 09/11: carteras recomendadas en el backtest y sección 14 (tabla resumen por perfil calculada + conclusiones, limitaciones y mejoras). El notebook está completo (111 celdas desde el 16/11).
 - [x] Lun 09/11: primera versión del folleto (3 páginas carta, artifact de diseño de Claude "Folleto – Carteras según el dólar", se exporta a PDF) y de la presentación (17 diapositivas desde el 16/11, con dos nuevas sobre cómo se arma el índice y sus aciertos; con notas del orador, artifact "Presentación – Carteras según el dólar", se exporta a PowerPoint o PDF). Los dos están en la cuenta de Claude de David; para que el compañero los vea hay que compartirlos desde el menú Compartir. Cuando estén aprobados, exportar el folleto a PDF y subirlo a `folleto/`.
 - [ ] Mar 10/11 y Mié 11/11: revisar folleto y presentación, ensayo y simulacro de preguntas.
 - [ ] Lun 16/11: presentación y entrega.
@@ -166,6 +166,12 @@ CLAUDE.md           este archivo
 - Recomendación final: la cartera Moderada sin mirar el dólar (23 acciones, vol 13,4%, 83% EE.UU.; CBOE, CHT, LLY, PGR, FERG). En la prueba: 17,6% vs S&P 20,9%, Sharpe 1,02 vs 1,08, caída −12,0% vs −18,8%.
 - Revisar cada 6 meses (calculado aparte, no está en el notebook): mejora algo, pero se probó después de ver la prueba; se usa solo como respuesta oral.
 - Presentación (16 diapositivas + anexo) y folleto rehechos con esta historia: diap. 10 = evolución con oráculo y tabla aciertos→retorno; 11 = métricas contra ACWI, S&P, 1/N, PPI, Citi; 12 = VaR + Monte Carlo 21 días de la recomendada (6,1% / 9,1%); 13 = stress de la recomendada vs ACWI; 14 = cartera recomendada; 15 = conclusiones; anexo = otros niveles de riesgo. Se sacó la diapositiva de Sharpe por perfil.
+
+## Ajustes del 16/11 (noche, antes de presentar)
+
+- Notebook: celdas bt-12d/bt-12e (sección 12) con el gráfico del anexo (las tres aversiones al riesgo lado a lado contra el S&P 500), para que todo lo de la presentación esté en el código.
+- Presentación: portada y diapositivas 13 y 14 dicen explícitamente que la recomendada es la "sin mirar el dólar"; la 14 ya no compara retorno con el S&P (solo la caída); diap. 4 sin el panel de retornos por escenario (quedan las betas por sector y por origen, EE.UU. −0,82 y afuera −1,47); diap. 10 y 15 explican por qué no se eligió la tendencia (acierta 56% igual que el índice, se destaca solo con riesgo medio; con riesgo alto rinde 40% vs 36% con volatilidad 20,5% vs 17,6%; con riesgo bajo empata).
+- Pruebas hechas aparte, NO están en el notebook ni en la presentación (solo respuesta oral): topes 15%/25% y sin topes (17,6% → 18,0–18,3%, siempre por debajo del S&P; el tope por sector no está activo), tendencia con 50 a 250 días en los tres perfiles (solo mejora el Sharpe en riesgo medio) y revisión cada 6 meses.
 
 ## Decisiones abiertas
 
