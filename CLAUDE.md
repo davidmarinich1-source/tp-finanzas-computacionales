@@ -171,6 +171,7 @@ CLAUDE.md           este archivo
 
 - Notebook: celdas bt-12d/bt-12e (sección 12) con el gráfico del anexo (las tres aversiones al riesgo lado a lado contra el S&P 500), para que todo lo de la presentación esté en el código.
 - Presentación: portada y diapositivas 13 y 14 dicen explícitamente que la recomendada es la "sin mirar el dólar"; la 14 ya no compara retorno con el S&P (solo la caída); diap. 4 sin el panel de retornos por escenario (quedan las betas por sector y por origen, EE.UU. −0,82 y afuera −1,47); diap. 10 y 15 explican por qué no se eligió la tendencia (acierta 56% igual que el índice, se destaca solo con riesgo medio; con riesgo alto rinde 40% vs 36% con volatilidad 20,5% vs 17,6%; con riesgo bajo empata).
+- ACWI como comparación principal en todos lados (es el benchmark; el S&P 500 queda como referencia): el gráfico de evolución (bt-12c, diap. 10 y folleto p. 2) incluye el ACWI (termina en USD 19.489); diap. 14 y folleto p. 1 comparan la caída con ambos (−12% vs −17% ACWI y −19% S&P). Caídas alineadas con el notebook: recomendada −11,9%, ACWI −16,5%; índice + confirmación 21,8%.
 - Pruebas hechas aparte, NO están en el notebook ni en la presentación (solo respuesta oral): topes 15%/25% y sin topes (17,6% → 18,0–18,3%, siempre por debajo del S&P; el tope por sector no está activo), tendencia con 50 a 250 días en los tres perfiles (solo mejora el Sharpe en riesgo medio) y revisión cada 6 meses.
 
 ## Decisiones abiertas
