@@ -165,6 +165,7 @@ CLAUDE.md           este archivo
 - Argumento central (celdas bt-12b/bt-12c): tendencia e índice aciertan lo mismo en la prueba (56%) y rinden 29,4% vs 20,3%; el oráculo (100%) rinde 26,2%, menos que la tendencia. La diferencia no viene de acertarle al dólar sino de qué acciones tenía cada estrategia en cada momento (azar, fragilidad del óptimo).
 - Recomendación final: la cartera Moderada sin mirar el dólar (23 acciones, vol 13,4%, 83% EE.UU.; CBOE, CHT, LLY, PGR, FERG). En la prueba: 17,6% vs S&P 20,9%, Sharpe 1,02 vs 1,08, caída −12,0% vs −18,8%.
 - Revisar cada 6 meses (calculado aparte, no está en el notebook): mejora algo, pero se probó después de ver la prueba; se usa solo como respuesta oral.
+- Presentación (16 diapositivas + anexo) y folleto rehechos con esta historia: diap. 10 = evolución con oráculo y tabla aciertos→retorno; 11 = métricas contra ACWI, S&P, 1/N, PPI, Citi; 12 = VaR + Monte Carlo 21 días de la recomendada (6,1% / 9,1%); 13 = stress de la recomendada vs ACWI; 14 = cartera recomendada; 15 = conclusiones; anexo = otros niveles de riesgo. Se sacó la diapositiva de Sharpe por perfil.
 
 ## Decisiones abiertas
 
