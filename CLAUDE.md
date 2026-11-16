@@ -159,6 +159,13 @@ CLAUDE.md           este archivo
 - **Recomendación final = cartera optimizada "sin dólar" de cada perfil** (estimada con todos los datos): Conservador 31 acciones, vol 11,1%, 73% EE.UU.; Moderado 23, 13,4%, 83%; Agresivo 19, 20,1%, 88%. No se recomienda cambiar de cartera según el pronóstico del dólar; el dólar se usa para entender el riesgo. Sección 14 del notebook (celdas con-02 a con-05) y Monte Carlo de la sección 13 incluyen estas carteras (VaR 21 días normal / σ×1,5: 5,2/7,7%, 6,1/9,1%, 9,2/13,5%).
 - Presentación y folleto actualizados el 16/11 con este criterio: títulos factuales (diap. 4, 5, 7, 10, 11, 12), backtest con tendencia y S&P 500, recomendación final y conclusiones nuevas (diap. 15 y 16); folleto con las carteras sin dólar en la página 1, tabla completa y "Qué encontramos" en la 2, y VaR de las carteras recomendadas en la 3.
 
+## Decisión del 16/11 (tarde): una sola cartera y argumento de los aciertos
+
+- El profe pidió no dar vueltas con los perfiles: la idea se evalúa con **una sola cartera**, `CONFIG["perfil_principal"] = "Moderado"` (λ = 10); la ALyC ajusta λ a cada cliente. Los otros perfiles van a un anexo.
+- Argumento central (celdas bt-12b/bt-12c): tendencia e índice aciertan lo mismo en la prueba (56%) y rinden 29,4% vs 20,3%; el oráculo (100%) rinde 26,2%, menos que la tendencia. La diferencia no viene de acertarle al dólar sino de qué acciones tenía cada estrategia en cada momento (azar, fragilidad del óptimo).
+- Recomendación final: la cartera Moderada sin mirar el dólar (23 acciones, vol 13,4%, 83% EE.UU.; CBOE, CHT, LLY, PGR, FERG). En la prueba: 17,6% vs S&P 20,9%, Sharpe 1,02 vs 1,08, caída −12,0% vs −18,8%.
+- Revisar cada 6 meses (calculado aparte, no está en el notebook): mejora algo, pero se probó después de ver la prueba; se usa solo como respuesta oral.
+
 ## Decisiones abiertas
 
 - Repaso del código con David: llegaron hasta la parte 4c (descarga en `DatosMercado`); sigue la 4d (filtro).
