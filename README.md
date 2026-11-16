@@ -43,9 +43,9 @@ Cada sección empieza con un texto que explica qué se hace y por qué, y el có
 | 9. Estimación | Clase `Estimador`: μ y Σ por escenario (Σ vectorizada, comprobada contra `np.cov`, y Ledoit-Wolf) | Comparación de Σ |
 | 10. Optimización | Clases `Optimizador`, `Cartera` y `ConjuntoCarteras`: SLSQP con topes y limpieza en dos pasadas | Composición de las carteras 2015–2022 |
 | 11. Recomendación de hoy | Lectura actual del pronóstico y carteras con todos los datos | Escenario esperado y carteras |
-| 12. Backtest y métricas | Clases `CarteraDinamica`, `Backtest`, `Metricas` y `SimuladorMC` | Tabla de métricas, evolución de USD 10.000, volatilidad rolling, aciertos vs. retorno, VaR y su backtesting |
+| 12. Backtest y métricas | Clases `CarteraDinamica`, `Backtest`, `Metricas` y `SimuladorMC` | Tabla de métricas (contra el ACWI, el S&P 500, 1/N y las carteras de PPI y Citi), evolución de USD 10.000, volatilidad rolling, aciertos vs. retorno, comparación de los tres niveles de riesgo, VaR y su backtesting |
 | 13. Stress test | Clase `StressTest`: crisis históricas, shocks hipotéticos y Monte Carlo estresado | Pérdidas por escenario y VaR a 1 y 21 días |
-| 14. Conclusiones | Tabla resumen, recomendación final, limitaciones y mejoras | Cartera recomendada |
+| 14. Conclusiones | Tabla resumen, recomendación final, limitaciones y mejoras | Cartera recomendada y su composición completa (23 acciones con sector, país y peso) |
 
 ## Parámetros que se pueden cambiar
 
