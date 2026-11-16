@@ -151,6 +151,13 @@ CLAUDE.md           este archivo
 - Stress C (carteras de hoy, dólar fuerte, VaR 95% a 21 días): Conservador 5,4% normal → 8,0% con σ × 1,5; Moderado 6,5% → 9,7%; Agresivo 8,8% → 13,0%.
 - Carteras recomendadas en la prueba: PPI 15,8% anual / Sharpe 0,98 / caída −10,5% (le ganó a nuestro Conservador); Citi 48,5% / 1,42 / caída −27,3%, volatilidad 27,7% (nuestro Agresivo sin señal tuvo mejor Sharpe).
 
+## Decisión del 16/11: conclusión honesta y recomendación final
+
+- David pidió mostrar lo que pasa de verdad, sin defender la hipótesis ni ser negativos de más.
+- Conclusión: el dólar define qué sectores convienen (betas, sectores), pero anticiparlo con tasa a 2 años + M2 no mejoró las carteras de forma consistente (índice solo: Sharpe 0,53/1,02/1,13 contra 0,80/1,02/1,62 sin señal). Lo que mejor anduvo fue la tendencia del DXY (reactiva, 9 cambios, muestra corta). La optimización con topes sí dio carteras con menos riesgo que el mercado (Conservador, Moderado) y más retorno en el Agresivo.
+- Contra el S&P 500 (20,9% anual en la prueba, período excepcional: 10,1% en 2015–2022): el Moderado empata, no le gana.
+- **Recomendación final = cartera optimizada "sin dólar" de cada perfil** (estimada con todos los datos): Conservador 31 acciones, vol 11,1%, 73% EE.UU.; Moderado 23, 13,4%, 83%; Agresivo 19, 20,1%, 88%. No se recomienda cambiar de cartera según el pronóstico del dólar; el dólar se usa para entender el riesgo. Sección 14 del notebook (celdas con-02 a con-05) y Monte Carlo de la sección 13 incluyen estas carteras (VaR 21 días normal / σ×1,5: 5,2/7,7%, 6,1/9,1%, 9,2/13,5%).
+
 ## Decisiones abiertas
 
 - Repaso del código con David: llegaron hasta la parte 4c (descarga en `DatosMercado`); sigue la 4d (filtro).
