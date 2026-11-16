@@ -157,6 +157,7 @@ CLAUDE.md           este archivo
 - Conclusión: el dólar define qué sectores convienen (betas, sectores), pero anticiparlo con tasa a 2 años + M2 no mejoró las carteras de forma consistente (índice solo: Sharpe 0,53/1,02/1,13 contra 0,80/1,02/1,62 sin señal). Lo que mejor anduvo fue la tendencia del DXY (reactiva, 9 cambios, muestra corta). La optimización con topes sí dio carteras con menos riesgo que el mercado (Conservador, Moderado) y más retorno en el Agresivo.
 - Contra el S&P 500 (20,9% anual en la prueba, período excepcional: 10,1% en 2015–2022): el Moderado empata, no le gana.
 - **Recomendación final = cartera optimizada "sin dólar" de cada perfil** (estimada con todos los datos): Conservador 31 acciones, vol 11,1%, 73% EE.UU.; Moderado 23, 13,4%, 83%; Agresivo 19, 20,1%, 88%. No se recomienda cambiar de cartera según el pronóstico del dólar; el dólar se usa para entender el riesgo. Sección 14 del notebook (celdas con-02 a con-05) y Monte Carlo de la sección 13 incluyen estas carteras (VaR 21 días normal / σ×1,5: 5,2/7,7%, 6,1/9,1%, 9,2/13,5%).
+- Presentación y folleto actualizados el 16/11 con este criterio: títulos factuales (diap. 4, 5, 7, 10, 11, 12), backtest con tendencia y S&P 500, recomendación final y conclusiones nuevas (diap. 15 y 16); folleto con las carteras sin dólar en la página 1, tabla completa y "Qué encontramos" en la 2, y VaR de las carteras recomendadas en la 3.
 
 ## Decisiones abiertas
 
