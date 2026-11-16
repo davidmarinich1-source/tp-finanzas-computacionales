@@ -142,7 +142,7 @@ CLAUDE.md           este archivo
 
 ### Resultados del backtest y del stress (secciones 12 y 13, prueba 03/01/2023 a 02/11/2026, 962 días)
 
-- Retorno anual / Sharpe: **Moderado** sin señal 17,6% / 1,02; tendencia DXY 29,4% / 1,41; índice 20,3% / 1,02; índice + confirmación 21,9% / 1,12; oráculo 26,2% / 1,28. **Conservador**: sin señal 13,0% / 0,80 (la mejor del perfil); las dinámicas 10–13% / 0,53–0,73. **Agresivo**: sin señal 36,3% / 1,62 (mejor Sharpe); tendencia 40,3% / 1,56; índice + confirmación 35,4% / 1,48; índice 26,1% / 1,13. ACWI 19,1% / 1,02; SPY 20,9% / 1,08; 1/N 19,1% / 1,06.
+- Retorno anual / Sharpe: **Moderado** sin señal 17,6% / 1,02; tendencia DXY 29,4% / 1,41; índice 20,3% / 1,02; índice + confirmación 21,8% / 1,12; oráculo 26,2% / 1,28. **Conservador**: sin señal 13,0% / 0,80 (la mejor del perfil); las dinámicas 10–13% / 0,53–0,73. **Agresivo**: sin señal 36,3% / 1,62 (mejor Sharpe); tendencia 40,3% / 1,56; índice + confirmación 35,4% / 1,48; índice 26,1% / 1,13. ACWI 19,1% / 1,02; SPY 20,9% / 1,08; 1/N 19,1% / 1,06.
 - Lectura: mirar el dólar ayudó en el perfil Moderado, no en el Conservador, y en el Agresivo subió el retorno pero no el Sharpe. El oráculo no siempre gana: el límite no es solo pronosticar el dólar sino que las carteras estimadas hasta 2022 sigan funcionando después.
 - Cambios de cartera en la prueba: tendencia 9, índice 8, índice + confirmación 15, oráculo 22.
 - VaR 95% a 1 día (Moderado sin señal): paramétrico 1,26%, histórico 1,18%, Monte Carlo 1,32%. Backtesting del VaR (ventana 250): los tres modelos dan "OK" en todas las estrategias probadas.
