@@ -1,7 +1,7 @@
 # CLAUDE.md: contexto del proyecto
 
 Trabajo Práctico Integrador (segundo parcial) de **Finanzas Computacionales 2026** (UADE, prof. Diego Onna, curso de los lunes a la noche).
-Integrantes: David Marinich y Mateo (compañero). Presentación y entrega: **lunes 16/11/2026** (8 a 15 minutos de exposición + preguntas sobre el código).
+Integrantes: David Marinich y Mateo Ariati. Presentación y entrega: **lunes 16/11/2026** (8 a 15 minutos de exposición + preguntas sobre el código).
 
 Este archivo es para que cualquier sesión de Claude (la de David o la de su compañero) tenga el contexto completo. **Mantenerlo actualizado** cuando se tome una decisión nueva.
 
