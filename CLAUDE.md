@@ -164,7 +164,6 @@ CLAUDE.md           este archivo
 - El profe pidió no dar vueltas con los perfiles: la idea se evalúa con **una sola cartera**, `CONFIG["perfil_principal"] = "Moderado"` (λ = 10); la ALyC ajusta λ a cada cliente. Los otros perfiles van a un anexo.
 - Argumento central (celdas bt-12b/bt-12c): tendencia e índice aciertan lo mismo en la prueba (56%) y rinden 29,4% vs 20,3%; el oráculo (100%) rinde 26,2%, menos que la tendencia. La diferencia no viene de acertarle al dólar sino de qué acciones tenía cada estrategia en cada momento (azar, fragilidad del óptimo).
 - Recomendación final: la cartera Moderada sin mirar el dólar (23 acciones, vol 13,4%, 83% EE.UU.; CBOE, CHT, LLY, PGR, FERG). En la prueba: 17,6% vs S&P 20,9%, Sharpe 1,02 vs 1,08, caída −12,0% vs −18,8%.
-- Revisar cada 6 meses (calculado aparte, no está en el notebook): mejora algo, pero se probó después de ver la prueba; se usa solo como respuesta oral.
 - Presentación (16 diapositivas + anexo) y folleto rehechos con esta historia: diap. 10 = evolución con oráculo y tabla aciertos→retorno; 11 = métricas contra ACWI, S&P, 1/N, PPI, Citi; 12 = VaR + Monte Carlo 21 días de la recomendada (6,1% / 9,1%); 13 = stress de la recomendada vs ACWI; 14 = cartera recomendada; 15 = conclusiones; anexo = otros niveles de riesgo. Se sacó la diapositiva de Sharpe por perfil.
 
 ## Ajustes del 16/11 (noche, antes de presentar)
@@ -173,8 +172,10 @@ CLAUDE.md           este archivo
 - Presentación: portada y diapositivas 13 y 14 dicen explícitamente que la recomendada es la "sin mirar el dólar"; la 14 ya no compara retorno con el S&P (solo la caída); diap. 4 sin el panel de retornos por escenario (quedan las betas por sector y por origen, EE.UU. −0,82 y afuera −1,47); diap. 10 y 15 explican por qué no se eligió la tendencia (acierta 56% igual que el índice, se destaca solo con riesgo medio; con riesgo alto rinde 40% vs 36% con volatilidad 20,5% vs 17,6%; con riesgo bajo empata).
 - ACWI como comparación principal en todos lados (es el benchmark; el S&P 500 queda como referencia): el gráfico de evolución (bt-12c, diap. 10 y folleto p. 2) incluye el ACWI (termina en USD 19.489); diap. 14 y folleto p. 1 comparan la caída con ambos (−12% vs −17% ACWI y −19% S&P). Caídas alineadas con el notebook: recomendada −11,9%, ACWI −16,5%; índice + confirmación 21,8%.
 - Composición completa de la cartera recomendada (23 acciones, 17% de afuera; incluye Nvidia 5,6% y AMD 1,5%, que la versión estimada hasta 2022 no tenía): notebook celdas con-04b/con-04c, diapositiva de anexo `composicion` y página 4 del folleto (`Composicion.dc.html`).
-- Pruebas hechas aparte, NO están en el notebook ni en la presentación (solo respuesta oral): topes 15%/25% y sin topes (17,6% → 18,0–18,3%, siempre por debajo del S&P; el tope por sector no está activo), tendencia con 50 a 250 días en los tres perfiles (solo mejora el Sharpe en riesgo medio) y revisión cada 6 meses.
+- Pruebas hechas aparte, NO están en el notebook ni en la presentación (solo respuesta oral): topes 15%/25% y sin topes (17,6% → 18,0–18,3%, siempre por debajo del S&P; el tope por sector no está activo) y tendencia con 50 a 250 días en los tres perfiles (solo mejora el Sharpe en riesgo medio).
 
 ## Decisiones abiertas
 
 - Repaso del código con David: llegaron hasta la parte 4c (descarga en `DatosMercado`); sigue la 4d (filtro).
+
+- 16/11 (noche): a pedido de David se sacaron de todos lados (notebook, README, instrucciones, notas de la presentación) la lista de mejoras a futuro y la idea de revisar la cartera cada 3 o 6 meses. No volver a agregarlas.
